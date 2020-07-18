@@ -8,7 +8,7 @@ void ReadVector3f(Vector3f& vector);
 
 int main()
 {
-	Vector3f vector(2.0f, 500.0f, 12.45f);
+	Vector3f vector(2.0f, 2.0f, 2.0f);
 	ReadVector3f(vector);
 	std::cout << std::endl;
 
@@ -41,9 +41,12 @@ int main()
 	Vector3f diffVector = vector - scalarMulVector;
 	ReadVector3f(diffVector);
 	std::cout << std::endl;
+
+	std::cout << "Vector length" << std::endl;
+	std::cout << vector.Length() << std::endl;
 }
 
 void ReadVector3f(Vector3f& vector) 
 {
-	std::cout << "Vector: " << vector.getX() << " " << vector.getY() << " " << vector.getZ() << std::endl;
+	std::cout << "Vector: " << vector.GetX() << " " << vector.GetY() << " " << vector.GetZ() << std::endl;
 }

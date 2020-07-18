@@ -1,4 +1,5 @@
 #pragma once
+#include <math.h>
 
 namespace Urano 
 {
@@ -25,9 +26,10 @@ namespace Urano
 			Vector3f operator-(const Vector3f& v) const;
 
 			//Getters/Setters
-			float getX();
-			float getY();
-			float getZ();
+			float GetX();
+			float GetY();
+			float GetZ();
+			float Length();
 	};
 }
 
