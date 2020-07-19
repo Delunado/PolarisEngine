@@ -8,7 +8,7 @@ void ReadVector3f(Vector3f& vector);
 
 int main()
 {
-	Vector3f vector(2.0f, 2.0f, 2.0f);
+	Vector3f vector(0.0f, 0.0f, 0.0f);
 	ReadVector3f(vector);
 	std::cout << std::endl;
 
@@ -43,7 +43,23 @@ int main()
 	std::cout << std::endl;
 
 	std::cout << "Vector length" << std::endl;
-	std::cout << vector.Length() << std::endl;
+	std::cout << vector.Magnitude() << std::endl;
+
+	std::cout << "Normalized vector from vector: " << std::endl;
+	Vector3f normalizedVector = vector.Normalized();
+	ReadVector3f(normalizedVector);
+	std::cout << std::endl;
+
+	std::cout << "Vector normalized: " << std::endl;
+	vector.Normalize();
+	ReadVector3f(vector);
+	std::cout << std::endl;
+
+	std::cout << "Distance from v1 to v2: " << std::endl;
+	Vector3f v1(2.0f, 2.0f, 0.0f);
+	Vector3f v2(4.0f, 4.0f, 0.0f);
+
+	std::cout << "Distance: " << Vector3f::Distance(vector, v2) << std::endl;
 }
 
 void ReadVector3f(Vector3f& vector) 

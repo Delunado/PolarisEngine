@@ -8,6 +8,8 @@ namespace Urano
 		private:
 			float x, y, z;
 
+			bool isVectorZero() const;
+
 		public:
 			//Constructor
 			Vector3f(float x, float y, float z);
@@ -29,7 +31,14 @@ namespace Urano
 			float GetX();
 			float GetY();
 			float GetZ();
-			float Length();
+
+			//Methods
+			float Magnitude() const;
+
+			void Normalize();
+			Vector3f Normalized() const;
+
+			static float Distance(Vector3f& vector1, Vector3f& vector2);
 	};
 }
 

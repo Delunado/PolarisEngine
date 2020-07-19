@@ -1,5 +1,10 @@
 #include "Vector3f.h"
 
+bool Urano::Vector3f::isVectorZero() const
+{
+	return (this->x == 0.0f && this->y == 0.0f && this->z == 0.0f);
+}
+
 Urano::Vector3f::Vector3f(float x, float y, float z) :x(x), y(y), z(z)
 {}
 
@@ -62,9 +67,38 @@ float Urano::Vector3f::GetZ()
 	return this->z;
 }
 
-float Urano::Vector3f::Length()
+float Urano::Vector3f::Magnitude() const
 {
 	return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));
+}
+
+void Urano::Vector3f::Normalize()
+{
+	//If it is the vector 0 we can't normalize it, so it remains the same.
+	if (this->isVectorZero())
+		return;
+
+	float magnitude = this->Magnitude();
+
+	this->x /= magnitude;
+	this->y /= magnitude;
+	this->z /= magnitude;
+}
+
+Urano::Vector3f Urano::Vector3f::Normalized() const
+{
+	if (this->isVectorZero()) {
+		return Vector3f(0.0f, 0.0f, 0.0f);
+	}
+	else {
+		float magnitude = Magnitude();
+		return Vector3f(this->x / magnitude, this->y / magnitude, this->z / magnitude);
+	}
+}
+
+float Urano::Vector3f::Distance(Vector3f& vector1, Vector3f& vector2)
+{
+	return (vector2 - vector1).Magnitude();
 }
 
 
