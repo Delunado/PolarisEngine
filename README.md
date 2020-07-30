@@ -3,5 +3,5 @@ Polaris Engine is a game engine created from scratch using C++ &amp; OpenGL, for
 
 The game engine contains three principal modules:
 - Urano: Math Engine (Work in progress)
-- ???: Render Engine (Not started yet)
-- ???: Physics Engine (Not started yet)
+- Thea: Render Engine (Not started yet)
+- Gea: Physics Engine (Not started yet)
