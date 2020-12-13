@@ -1,3 +1,5 @@
+**CURRENTLY STOPPED PROJECT. WILL BE BACK TO IT SOON!**
+
 # What is Polaris Engine?
 Polaris Engine is a game engine created from scratch using C++ &amp; OpenGL, for the sake of learning.
 
