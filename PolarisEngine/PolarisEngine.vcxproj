@@ -18,6 +18,72 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Core\CameraController.h" />
+    <ClInclude Include="src\Core\Debug.h" />
+    <ClInclude Include="src\Core\MouseCodes.h" />
+    <ClInclude Include="src\Core\KeyCodes.h" />
+    <ClInclude Include="src\Core\Input.h" />
+    <ClInclude Include="src\Core\Application.h" />
+    <ClInclude Include="src\Tea\AmbientLight.h" />
+    <ClInclude Include="src\Tea\Camera.h" />
+    <ClInclude Include="src\Tea\Color.h" />
+    <ClInclude Include="src\Tea\DirectionalLight.h" />
+    <ClInclude Include="src\Tea\Light.h" />
+    <ClInclude Include="src\Tea\LightData.h" />
+    <ClInclude Include="src\Tea\LightType.h" />
+    <ClInclude Include="src\Tea\lodepng.h" />
+    <ClInclude Include="src\Tea\Material.h" />
+    <ClInclude Include="src\Tea\Mesh.h" />
+    <ClInclude Include="src\Tea\Model.h" />
+    <ClInclude Include="src\Tea\ModelRepresentation.h" />
+    <ClInclude Include="src\Tea\PointLight.h" />
+    <ClInclude Include="src\Tea\RenderData.h" />
+    <ClInclude Include="src\Tea\Renderer.h" />
+    <ClInclude Include="src\Tea\Shader.h" />
+    <ClInclude Include="src\Tea\ShaderProgram.h" />
+    <ClInclude Include="src\Tea\SpotLight.h" />
+    <ClInclude Include="src\Tea\Texture.h" />
+    <ClInclude Include="src\Tea\Transform.h" />
+    <ClInclude Include="src\Tea\UniformBase.h" />
+    <ClInclude Include="src\Tea\UniformFloat.h" />
+    <ClInclude Include="src\Tea\UniformMatrix4f.h" />
+    <ClInclude Include="src\Tea\UniformSampler2D.h" />
+    <ClInclude Include="src\Tea\UniformVec3f.h" />
+    <ClInclude Include="src\Ura\Vector3f.h" />
+    <ClInclude Include="src\Core\TimeStep.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Core\CameraController.cpp" />
+    <ClCompile Include="src\Core\Input.cpp" />
+    <ClCompile Include="src\Core\Application.cpp" />
+    <ClCompile Include="src\Core\main.cpp" />
+    <ClCompile Include="src\Tea\AmbientLight.cpp" />
+    <ClCompile Include="src\Tea\Camera.cpp" />
+    <ClCompile Include="src\Tea\Color.cpp" />
+    <ClCompile Include="src\Tea\DirectionalLight.cpp" />
+    <ClCompile Include="src\Tea\Light.cpp" />
+    <ClCompile Include="src\Tea\LightData.cpp" />
+    <ClCompile Include="src\Tea\lodepng.cpp" />
+    <ClCompile Include="src\Tea\Material.cpp" />
+    <ClCompile Include="src\Tea\Mesh.cpp" />
+    <ClCompile Include="src\Tea\Model.cpp" />
+    <ClCompile Include="src\Tea\PointLight.cpp" />
+    <ClCompile Include="src\Tea\RenderData.cpp" />
+    <ClCompile Include="src\Tea\Renderer.cpp" />
+    <ClCompile Include="src\Tea\Shader.cpp" />
+    <ClCompile Include="src\Tea\ShaderProgram.cpp" />
+    <ClCompile Include="src\Tea\SpotLight.cpp" />
+    <ClCompile Include="src\Tea\Texture.cpp" />
+    <ClCompile Include="src\Tea\Transform.cpp" />
+    <ClCompile Include="src\Tea\UniformBase.cpp" />
+    <ClCompile Include="src\Tea\UniformFloat.cpp" />
+    <ClCompile Include="src\Tea\UniformMatrix4f.cpp" />
+    <ClCompile Include="src\Tea\UniformSampler2D.cpp" />
+    <ClCompile Include="src\Tea\UniformVec3f.cpp" />
+    <ClCompile Include="src\Ura\Vector3f.cpp" />
+    <ClCompile Include="src\Core\TimeStep.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{8A3C79B0-7D6A-4312-9D4F-E52FE5B685B6}</ProjectGuid>
@@ -72,15 +138,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\Intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\Intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\Intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\Intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -90,10 +164,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\x32\assimp\include;$(SolutionDir)Dependencies\x32\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\x32\glfw-3.3.2.bin.WIN32\include;$(SolutionDir)Dependencies\x32\glew-2.1.0\include;$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\x32\assimp\lib;$(SolutionDir)Dependencies\x32\glfw-3.3.2.bin.WIN32\lib-vc2019;$(SolutionDir)Dependencies\x32\glew-2.1.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc142-mtd.lib;opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -104,10 +181,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;$(SolutionDir)Dependencies\x64\assimp\include;$(SolutionDir)Dependencies\x64\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\x64\glfw-3.3.2.bin.WIN64\include;$(SolutionDir)Dependencies\x64\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\x64\assimp\lib;$(SolutionDir)Dependencies\x64\glfw-3.3.2.bin.WIN64\lib-vc2019;$(SolutionDir)Dependencies\x64\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc142-mt-x64d.lib;opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -120,12 +200,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\x32\assimp\include;$(SolutionDir)Dependencies\x32\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\x32\glfw-3.3.2.bin.WIN32\include;$(SolutionDir)Dependencies\x32\glew-2.1.0\include;$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\x32\assimp\lib;$(SolutionDir)Dependencies\x32\glfw-3.3.2.bin.WIN32\lib-vc2019;$(SolutionDir)Dependencies\x32\glew-2.1.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc142-mtd.lib;opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -138,21 +221,17 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;$(SolutionDir)Dependencies\x64\assimp\include;$(SolutionDir)Dependencies\x64\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\x64\glfw-3.3.2.bin.WIN64\include;$(SolutionDir)Dependencies\x64\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\x64\assimp\lib;$(SolutionDir)Dependencies\x64\glfw-3.3.2.bin.WIN64\lib-vc2019;$(SolutionDir)Dependencies\x64\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc142-mt-x64d.lib;opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="PolarisEngine.cpp" />
-    <ClCompile Include="Vector3f.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Vector3f.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
