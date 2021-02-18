@@ -164,12 +164,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\x32\assimp\include;$(SolutionDir)Dependencies\x32\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\x32\glfw-3.3.2.bin.WIN32\include;$(SolutionDir)Dependencies\x32\glew-2.1.0\include;$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\DWin32\assimp\include;$(SolutionDir)Dependencies\DWin32\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\DWin32\glfw-3.3.2.bin.WIN32\include;$(SolutionDir)Dependencies\DWin32\glew-2.1.0\include;$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\x32\assimp\lib;$(SolutionDir)Dependencies\x32\glfw-3.3.2.bin.WIN32\lib-vc2019;$(SolutionDir)Dependencies\x32\glew-2.1.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\DWin32\assimp\lib;$(SolutionDir)Dependencies\DWin32\glfw-3.3.2.bin.WIN32\lib-vc2019;$(SolutionDir)Dependencies\DWin32\glew-2.1.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>assimp-vc142-mtd.lib;opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -181,12 +181,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;$(SolutionDir)Dependencies\x64\assimp\include;$(SolutionDir)Dependencies\x64\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\x64\glfw-3.3.2.bin.WIN64\include;$(SolutionDir)Dependencies\x64\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;$(SolutionDir)Dependencies\DWin64\assimp\include;$(SolutionDir)Dependencies\DWin64\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\DWin64\glfw-3.3.2.bin.WIN64\include;$(SolutionDir)Dependencies\DWin64\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\x64\assimp\lib;$(SolutionDir)Dependencies\x64\glfw-3.3.2.bin.WIN64\lib-vc2019;$(SolutionDir)Dependencies\x64\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\DWin64\assimp\lib;$(SolutionDir)Dependencies\DWin64\glfw-3.3.2.bin.WIN64\lib-vc2019;$(SolutionDir)Dependencies\DWin64\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>assimp-vc142-mt-x64d.lib;opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -200,14 +200,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\Win32\assimp\include;$(SolutionDir)Dependencies\Win32\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\Win32\glfw-3.3.2.bin.WIN32\include;$(SolutionDir)Dependencies\Win32\glew-2.1.0\include;$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\DWin32\assimp\include;$(SolutionDir)Dependencies\DWin32\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\DWin32\glfw-3.3.2.bin.WIN32\include;$(SolutionDir)Dependencies\DWin32\glew-2.1.0\include;$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Win32\assimp\lib;$(SolutionDir)Dependencies\Win32\glfw-3.3.2.bin.WIN32\lib-vc2019;$(SolutionDir)Dependencies\Win32\glew-2.1.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\DWin32\assimp\lib;$(SolutionDir)Dependencies\DWin32\glfw-3.3.2.bin.WIN32\lib-vc2019;$(SolutionDir)Dependencies\DWin32\glew-2.1.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>assimp-vc142-mtd.lib;opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -221,14 +221,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;$(SolutionDir)Dependencies\Win64\assimp\include;$(SolutionDir)Dependencies\Win64\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\Win64\glfw-3.3.2.bin.WIN64\include;$(SolutionDir)Dependencies\Win64\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;$(SolutionDir)Dependencies\DWin64\assimp\include;$(SolutionDir)Dependencies\DWin64\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\DWin64\glfw-3.3.2.bin.WIN64\include;$(SolutionDir)Dependencies\DWin64\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\Win64\assimp\lib;$(SolutionDir)Dependencies\Win64\glfw-3.3.2.bin.WIN64\lib-vc2019;$(SolutionDir)Dependencies\Win64\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\DWin64\assimp\lib;$(SolutionDir)Dependencies\DWin64\glfw-3.3.2.bin.WIN64\lib-vc2019;$(SolutionDir)Dependencies\DWin64\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>assimp-vc142-mt-x64d.lib;opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
