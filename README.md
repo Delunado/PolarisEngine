@@ -1,4 +1,4 @@
-[![Version]](https://img.shields.io/badge/version-v0.1-green)]
+![Version](https://img.shields.io/badge/version-v0.1-green)
 
 
 
@@ -10,29 +10,29 @@ The game engine contains several modules and submodules, as well as a visual edi
 
 ###### Modules
 
-- **Core**: Basic features, the core pieces of the engine. [![Version]](https://img.shields.io/badge/v0.1-green)]
+- **Core**: Basic features, the core pieces of the engine. ![Version](https://img.shields.io/badge/v0.1-green)
 
-- **Math**: It contains all the math features: Vectors, Matrices, etc. *Right now using GLM until this module is started*.[![Version]](https://img.shields.io/badge/Not Started-red)]
+- **Math**: It contains all the math features: Vectors, Matrices, etc. *Right now using GLM until this module is started*. ![Version](https://img.shields.io/badge/NotStarted-red)
 
-- **Rendering**: It contains all the rendering features. 3D/2D Renderer, Models, Shaders, etc.
+- **Rendering**: It contains all the rendering features. 3D/2D Renderer, Models, Shaders, etc. ![Version](https://img.shields.io/badge/v0.1-green)
 
-- **UI**: It contains features for adding text, menus, etc. Used In-game and in the Editor.
+- **UI**: It contains features for adding text, menus, etc. Used In-game and in the Editor. ![Version](https://img.shields.io/badge/NotStarted-red)
 
-- **Physics**: It contains features related to physics: Rigidbodies, collisions, etc.
+- **Physics**: It contains features related to physics: Rigidbodies, collisions, etc. ![Version](https://img.shields.io/badge/NotStarted-red)
 
-- **Audio**: It contains audio reproduction features.
+- **Audio**: It contains audio reproduction features. ![Version](https://img.shields.io/badge/NotStarted-red)
 
-- **Scripting**: It contains scripting features, so we can add scripts to the game objects. 
+- **Scripting**: It contains scripting features, so we can add scripts to the game objects. ![Version](https://img.shields.io/badge/NotStarted-red)
 
   
 
 ###### Submodules
 
-- **Logger/Profiler**: It contains debugging features: log-to-console/log-to-file messages, profiling, etc.
+- **Logger/Profiler**: It contains debugging features: log-to-console/log-to-file messages, profiling, etc. ![Version](https://img.shields.io/badge/v0.1-green)
 
-- **Input**: It contains input features, like input polling.
+- **Input**: It contains input features, like input polling. ![Version](https://img.shields.io/badge/v0.1-green)
 
-- **Memory**: It contains smart memory management features. 
+- **Memory**: It contains smart memory management features. ![Version](https://img.shields.io/badge/NotStarted-red)
 
   
 
@@ -50,7 +50,7 @@ Right now, Polaris Engine is only compilable and usable on Windows. This reposit
 2. Double click on `InstallDependencies.bat`. This script will locate the dependencies and properly unzip the `Dependencies.zip` for you.
 3. Open the Visual Studio Solution and try to compile and execute Polaris Engine. It should work now. If it's not working, please make an issue in this repo and I will try to help you!
 
-**Important: ** Right now, Polaris Engine is only compilable in x64 mode. This will be fixed soon. Sorry.
+**Important:** Right now, Polaris Engine is only compilable in x64 mode. This will be fixed soon. Sorry.
 
 
 
