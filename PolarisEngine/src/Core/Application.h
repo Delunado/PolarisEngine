@@ -39,23 +39,23 @@ private:
 	//Constants
 	const GLfloat COLOR_MOUSE_WHEEL_MULTIPLIER = 0.01f;
 
-	TEA::ShaderProgram* basicShaderProgram;
-	TEA::ShaderProgram* normalShaderProgram;
-	TEA::Shader* vertexShader;
-	TEA::Shader* fragmentShader;
+	Render::ShaderProgram* basicShaderProgram;
+	Render::ShaderProgram* normalShaderProgram;
+	Render::Shader* vertexShader;
+	Render::Shader* fragmentShader;
 
-	TEA::Model* currentModel;
-	TEA::Material* basicMaterial;
-	TEA::Material* dragonMaterial;
-	TEA::Material* spotMaterial;
+	Render::Model* currentModel;
+	Render::Material* basicMaterial;
+	Render::Material* dragonMaterial;
+	Render::Material* spotMaterial;
 
-	TEA::Texture* dragonTexture;
-	TEA::Texture* spotTexture;
+	Render::Texture* dragonTexture;
+	Render::Texture* spotTexture;
 
-	TEA::AmbientLight* ambientLight;
-	TEA::PointLight* pointLight;
-	TEA::DirectionalLight* directionalLight;
-	TEA::SpotLight* spotLight;
+	Render::AmbientLight* ambientLight;
+	Render::PointLight* pointLight;
+	Render::DirectionalLight* directionalLight;
+	Render::SpotLight* spotLight;
 
 	GLfloat posOffset;
 

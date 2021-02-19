@@ -9,84 +9,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Tea\AmbientLight.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\Camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\Color.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\DirectionalLight.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\Light.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\LightData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\LightType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\lodepng.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\Material.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\Mesh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\Model.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\ModelRepresentation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\PointLight.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\RenderData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\Renderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\Shader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\ShaderProgram.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\SpotLight.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\Texture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\Transform.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\UniformBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\UniformFloat.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\UniformMatrix4f.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\UniformSampler2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Tea\UniformVec3f.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Ura\Vector3f.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Core\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -108,81 +30,87 @@
     <ClInclude Include="src\Core\CameraController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Rendering\AmbientLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\Color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\DirectionalLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\Light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\LightData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\LightType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\lodepng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\ModelRepresentation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\PointLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\RenderData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\ShaderProgram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\SpotLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\UniformBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\UniformFloat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\UniformMatrix4f.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\UniformSampler2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\UniformVec3f.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Maths\Vector3f.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Ura\Vector3f.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Core\main.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\AmbientLight.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\Camera.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\Color.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\DirectionalLight.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\Light.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\LightData.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\lodepng.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\Material.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\Mesh.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\Model.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\PointLight.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\RenderData.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\Renderer.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\Shader.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\ShaderProgram.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\SpotLight.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\Texture.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\Transform.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\UniformBase.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\UniformFloat.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\UniformMatrix4f.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\UniformSampler2D.cpp">
-      <Filter>CPP Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Tea\UniformVec3f.cpp">
       <Filter>CPP Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Application.cpp">
@@ -195,6 +123,78 @@
       <Filter>CPP Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\CameraController.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\AmbientLight.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Camera.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Color.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\DirectionalLight.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Light.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\LightData.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\lodepng.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Material.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Mesh.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Model.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\PointLight.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\RenderData.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Renderer.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Shader.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\ShaderProgram.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\SpotLight.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Texture.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Transform.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\UniformBase.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\UniformFloat.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\UniformMatrix4f.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\UniformSampler2D.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\UniformVec3f.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Maths\Vector3f.cpp">
       <Filter>CPP Files</Filter>
     </ClCompile>
   </ItemGroup>

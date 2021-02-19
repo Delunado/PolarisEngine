@@ -78,31 +78,31 @@ void CameraController::KeyboardMovement(float speed)
 
 void CameraController::CameraDolly(GLfloat x, GLfloat z)
 {
-	TEA::Renderer::GetInstance()->GetCurrentCamera()->Move(TEA::CAMERA_MOV_DIR::FORWARD, z);
-	TEA::Renderer::GetInstance()->GetCurrentCamera()->Move(TEA::CAMERA_MOV_DIR::RIGHTWARD, x);
+	Render::Renderer::GetInstance()->GetCurrentCamera()->Move(Render::CAMERA_MOV_DIR::FORWARD, z);
+	Render::Renderer::GetInstance()->GetCurrentCamera()->Move(Render::CAMERA_MOV_DIR::RIGHTWARD, x);
 }
 
 void CameraController::CameraCrane(GLfloat y)
 {
-	TEA::Renderer::GetInstance()->GetCurrentCamera()->Move(TEA::CAMERA_MOV_DIR::UPWARD, y);
+	Render::Renderer::GetInstance()->GetCurrentCamera()->Move(Render::CAMERA_MOV_DIR::UPWARD, y);
 }
 
 void CameraController::CameraZoom(GLfloat zoom)
 {
-	TEA::Renderer::GetInstance()->GetCurrentCamera()->Zoom(zoom);
+	Render::Renderer::GetInstance()->GetCurrentCamera()->Zoom(zoom);
 }
 
 void CameraController::CameraPan(GLfloat angle)
 {
-	TEA::Renderer::GetInstance()->GetCurrentCamera()->Rotate(angle, 0.0f);
+	Render::Renderer::GetInstance()->GetCurrentCamera()->Rotate(angle, 0.0f);
 }
 
 void CameraController::CameraTilt(GLfloat angle)
 {
-	TEA::Renderer::GetInstance()->GetCurrentCamera()->Rotate(0.0f, angle);
+	Render::Renderer::GetInstance()->GetCurrentCamera()->Rotate(0.0f, angle);
 }
 
 void CameraController::CameraOrbit(GLfloat angleX, GLfloat angleY)
 {
-	TEA::Renderer::GetInstance()->GetCurrentCamera()->RotateAround(angleX, angleY, TEA::Renderer::GetInstance()->GetCurrentCamera()->GetLookAtPoint());
+	Render::Renderer::GetInstance()->GetCurrentCamera()->RotateAround(angleX, angleY, Render::Renderer::GetInstance()->GetCurrentCamera()->GetLookAtPoint());
 }

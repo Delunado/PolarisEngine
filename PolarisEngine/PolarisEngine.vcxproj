@@ -25,32 +25,32 @@
     <ClInclude Include="src\Core\KeyCodes.h" />
     <ClInclude Include="src\Core\Input.h" />
     <ClInclude Include="src\Core\Application.h" />
-    <ClInclude Include="src\Tea\AmbientLight.h" />
-    <ClInclude Include="src\Tea\Camera.h" />
-    <ClInclude Include="src\Tea\Color.h" />
-    <ClInclude Include="src\Tea\DirectionalLight.h" />
-    <ClInclude Include="src\Tea\Light.h" />
-    <ClInclude Include="src\Tea\LightData.h" />
-    <ClInclude Include="src\Tea\LightType.h" />
-    <ClInclude Include="src\Tea\lodepng.h" />
-    <ClInclude Include="src\Tea\Material.h" />
-    <ClInclude Include="src\Tea\Mesh.h" />
-    <ClInclude Include="src\Tea\Model.h" />
-    <ClInclude Include="src\Tea\ModelRepresentation.h" />
-    <ClInclude Include="src\Tea\PointLight.h" />
-    <ClInclude Include="src\Tea\RenderData.h" />
-    <ClInclude Include="src\Tea\Renderer.h" />
-    <ClInclude Include="src\Tea\Shader.h" />
-    <ClInclude Include="src\Tea\ShaderProgram.h" />
-    <ClInclude Include="src\Tea\SpotLight.h" />
-    <ClInclude Include="src\Tea\Texture.h" />
-    <ClInclude Include="src\Tea\Transform.h" />
-    <ClInclude Include="src\Tea\UniformBase.h" />
-    <ClInclude Include="src\Tea\UniformFloat.h" />
-    <ClInclude Include="src\Tea\UniformMatrix4f.h" />
-    <ClInclude Include="src\Tea\UniformSampler2D.h" />
-    <ClInclude Include="src\Tea\UniformVec3f.h" />
-    <ClInclude Include="src\Ura\Vector3f.h" />
+    <ClInclude Include="src\Rendering\AmbientLight.h" />
+    <ClInclude Include="src\Rendering\Camera.h" />
+    <ClInclude Include="src\Rendering\Color.h" />
+    <ClInclude Include="src\Rendering\DirectionalLight.h" />
+    <ClInclude Include="src\Rendering\Light.h" />
+    <ClInclude Include="src\Rendering\LightData.h" />
+    <ClInclude Include="src\Rendering\LightType.h" />
+    <ClInclude Include="src\Rendering\lodepng.h" />
+    <ClInclude Include="src\Rendering\Material.h" />
+    <ClInclude Include="src\Rendering\Mesh.h" />
+    <ClInclude Include="src\Rendering\Model.h" />
+    <ClInclude Include="src\Rendering\ModelRepresentation.h" />
+    <ClInclude Include="src\Rendering\PointLight.h" />
+    <ClInclude Include="src\Rendering\RenderData.h" />
+    <ClInclude Include="src\Rendering\Renderer.h" />
+    <ClInclude Include="src\Rendering\Shader.h" />
+    <ClInclude Include="src\Rendering\ShaderProgram.h" />
+    <ClInclude Include="src\Rendering\SpotLight.h" />
+    <ClInclude Include="src\Rendering\Texture.h" />
+    <ClInclude Include="src\Rendering\Transform.h" />
+    <ClInclude Include="src\Rendering\UniformBase.h" />
+    <ClInclude Include="src\Rendering\UniformFloat.h" />
+    <ClInclude Include="src\Rendering\UniformMatrix4f.h" />
+    <ClInclude Include="src\Rendering\UniformSampler2D.h" />
+    <ClInclude Include="src\Rendering\UniformVec3f.h" />
+    <ClInclude Include="src\Maths\Vector3f.h" />
     <ClInclude Include="src\Core\TimeStep.h" />
   </ItemGroup>
   <ItemGroup>
@@ -58,30 +58,30 @@
     <ClCompile Include="src\Core\Input.cpp" />
     <ClCompile Include="src\Core\Application.cpp" />
     <ClCompile Include="src\Core\main.cpp" />
-    <ClCompile Include="src\Tea\AmbientLight.cpp" />
-    <ClCompile Include="src\Tea\Camera.cpp" />
-    <ClCompile Include="src\Tea\Color.cpp" />
-    <ClCompile Include="src\Tea\DirectionalLight.cpp" />
-    <ClCompile Include="src\Tea\Light.cpp" />
-    <ClCompile Include="src\Tea\LightData.cpp" />
-    <ClCompile Include="src\Tea\lodepng.cpp" />
-    <ClCompile Include="src\Tea\Material.cpp" />
-    <ClCompile Include="src\Tea\Mesh.cpp" />
-    <ClCompile Include="src\Tea\Model.cpp" />
-    <ClCompile Include="src\Tea\PointLight.cpp" />
-    <ClCompile Include="src\Tea\RenderData.cpp" />
-    <ClCompile Include="src\Tea\Renderer.cpp" />
-    <ClCompile Include="src\Tea\Shader.cpp" />
-    <ClCompile Include="src\Tea\ShaderProgram.cpp" />
-    <ClCompile Include="src\Tea\SpotLight.cpp" />
-    <ClCompile Include="src\Tea\Texture.cpp" />
-    <ClCompile Include="src\Tea\Transform.cpp" />
-    <ClCompile Include="src\Tea\UniformBase.cpp" />
-    <ClCompile Include="src\Tea\UniformFloat.cpp" />
-    <ClCompile Include="src\Tea\UniformMatrix4f.cpp" />
-    <ClCompile Include="src\Tea\UniformSampler2D.cpp" />
-    <ClCompile Include="src\Tea\UniformVec3f.cpp" />
-    <ClCompile Include="src\Ura\Vector3f.cpp" />
+    <ClCompile Include="src\Rendering\AmbientLight.cpp" />
+    <ClCompile Include="src\Rendering\Camera.cpp" />
+    <ClCompile Include="src\Rendering\Color.cpp" />
+    <ClCompile Include="src\Rendering\DirectionalLight.cpp" />
+    <ClCompile Include="src\Rendering\Light.cpp" />
+    <ClCompile Include="src\Rendering\LightData.cpp" />
+    <ClCompile Include="src\Rendering\lodepng.cpp" />
+    <ClCompile Include="src\Rendering\Material.cpp" />
+    <ClCompile Include="src\Rendering\Mesh.cpp" />
+    <ClCompile Include="src\Rendering\Model.cpp" />
+    <ClCompile Include="src\Rendering\PointLight.cpp" />
+    <ClCompile Include="src\Rendering\RenderData.cpp" />
+    <ClCompile Include="src\Rendering\Renderer.cpp" />
+    <ClCompile Include="src\Rendering\Shader.cpp" />
+    <ClCompile Include="src\Rendering\ShaderProgram.cpp" />
+    <ClCompile Include="src\Rendering\SpotLight.cpp" />
+    <ClCompile Include="src\Rendering\Texture.cpp" />
+    <ClCompile Include="src\Rendering\Transform.cpp" />
+    <ClCompile Include="src\Rendering\UniformBase.cpp" />
+    <ClCompile Include="src\Rendering\UniformFloat.cpp" />
+    <ClCompile Include="src\Rendering\UniformMatrix4f.cpp" />
+    <ClCompile Include="src\Rendering\UniformSampler2D.cpp" />
+    <ClCompile Include="src\Rendering\UniformVec3f.cpp" />
+    <ClCompile Include="src\Maths\Vector3f.cpp" />
     <ClCompile Include="src\Core\TimeStep.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -164,7 +164,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\DWin32\assimp\include;$(SolutionDir)Dependencies\DWin32\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\DWin32\glfw-3.3.2.bin.WIN32\include;$(SolutionDir)Dependencies\DWin32\glew-2.1.0\include;$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\DWin32\assimp\include;$(SolutionDir)Dependencies\DWin32\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\DWin32\glfw-3.3.2.bin.WIN32\include;$(SolutionDir)Dependencies\DWin32\glew-2.1.0\include;$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Maths;$(SolutionDir)PolarisEngine\src\Rendering;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -181,7 +181,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;$(SolutionDir)Dependencies\DWin64\assimp\include;$(SolutionDir)Dependencies\DWin64\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\DWin64\glfw-3.3.2.bin.WIN64\include;$(SolutionDir)Dependencies\DWin64\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Maths;$(SolutionDir)PolarisEngine\src\Rendering;$(SolutionDir)Dependencies\DWin64\assimp\include;$(SolutionDir)Dependencies\DWin64\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\DWin64\glfw-3.3.2.bin.WIN64\include;$(SolutionDir)Dependencies\DWin64\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -200,7 +200,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\DWin32\assimp\include;$(SolutionDir)Dependencies\DWin32\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\DWin32\glfw-3.3.2.bin.WIN32\include;$(SolutionDir)Dependencies\DWin32\glew-2.1.0\include;$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\DWin32\assimp\include;$(SolutionDir)Dependencies\DWin32\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\DWin32\glfw-3.3.2.bin.WIN32\include;$(SolutionDir)Dependencies\DWin32\glew-2.1.0\include;$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Maths;$(SolutionDir)PolarisEngine\src\Rendering;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -221,7 +221,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Ura;$(SolutionDir)PolarisEngine\src\Tea;$(SolutionDir)Dependencies\DWin64\assimp\include;$(SolutionDir)Dependencies\DWin64\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\DWin64\glfw-3.3.2.bin.WIN64\include;$(SolutionDir)Dependencies\DWin64\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Maths;$(SolutionDir)PolarisEngine\src\Rendering;$(SolutionDir)Dependencies\DWin64\assimp\include;$(SolutionDir)Dependencies\DWin64\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\DWin64\glfw-3.3.2.bin.WIN64\include;$(SolutionDir)Dependencies\DWin64\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

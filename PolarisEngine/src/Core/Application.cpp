@@ -70,33 +70,33 @@ int Application::Init()
 
 
 	//---- Init Polaris Classes ----
-	TEA::Renderer::GetInstance()->InitRenderer();
+	Render::Renderer::GetInstance()->InitRenderer();
 
 	//First we create the vertex and fragment shaders.
-	vertexShader = TEA::Shader::CreateShader(GL_VERTEX_SHADER, "Shaders/BasicVertexShader.glsl");
-	fragmentShader = TEA::Shader::CreateShader(GL_FRAGMENT_SHADER, "Shaders/BasicFragmentShader.glsl");
+	vertexShader = Render::Shader::CreateShader(GL_VERTEX_SHADER, "Shaders/BasicVertexShader.glsl");
+	fragmentShader = Render::Shader::CreateShader(GL_FRAGMENT_SHADER, "Shaders/BasicFragmentShader.glsl");
 
 	//Now we create the shader program, attach the shaders and link the program.
-	basicShaderProgram = TEA::ShaderProgram::CreateShaderProgram(vertexShader, fragmentShader);
+	basicShaderProgram = Render::ShaderProgram::CreateShaderProgram(vertexShader, fragmentShader);
 
 	//Same for normal mapping shaders
-	TEA::Shader* normalVertexShader = TEA::Shader::CreateShader(GL_VERTEX_SHADER, "Shaders/NormalMapVertexShader.glsl");
-	TEA::Shader* normalFragmentShader = TEA::Shader::CreateShader(GL_FRAGMENT_SHADER, "Shaders/NormalMapFragmentShader.glsl");
+	Render::Shader* normalVertexShader = Render::Shader::CreateShader(GL_VERTEX_SHADER, "Shaders/NormalMapVertexShader.glsl");
+	Render::Shader* normalFragmentShader = Render::Shader::CreateShader(GL_FRAGMENT_SHADER, "Shaders/NormalMapFragmentShader.glsl");
 
-	normalShaderProgram = TEA::ShaderProgram::CreateShaderProgram(normalVertexShader, normalFragmentShader);
+	normalShaderProgram = Render::ShaderProgram::CreateShaderProgram(normalVertexShader, normalFragmentShader);
 
 	//Here we create a basic material
-	basicMaterial = TEA::Material::CreateMaterial(TEA::Color(0.5f, 0.5f, 0.5f), TEA::Color(0.1f, 0.3f, 0.7f), TEA::Color(1.0f, 1.0f, 1.0f), 8.0f);
+	basicMaterial = Render::Material::CreateMaterial(Render::Color(0.5f, 0.5f, 0.5f), Render::Color(0.1f, 0.3f, 0.7f), Render::Color(1.0f, 1.0f, 1.0f), 8.0f);
 	basicMaterial->SetShaderProgram(basicShaderProgram);
 
-	spotMaterial = TEA::Material::CreateMaterial(TEA::Color(0.1f, 0.3f, 0.7f), TEA::Color(0.1f, 0.3f, 0.7f), TEA::Color(1.0f, 1.0f, 1.0f), 8.0f);
+	spotMaterial = Render::Material::CreateMaterial(Render::Color(0.1f, 0.3f, 0.7f), Render::Color(0.1f, 0.3f, 0.7f), Render::Color(1.0f, 1.0f, 1.0f), 8.0f);
 	spotMaterial->SetShaderProgram(basicShaderProgram);
-	spotTexture = TEA::Texture::CreateTexture("Assets/spot_texture.png");
+	spotTexture = Render::Texture::CreateTexture("Assets/spot_texture.png");
 	spotMaterial->SetColorTexture(spotTexture);
 
-	dragonMaterial = TEA::Material::CreateMaterial(TEA::Color::GREEN, TEA::Color(0.5f, 0.5f, 0.5f), TEA::Color(1.0f, 1.0f, 1.0f), 8.0f);
-	dragonTexture = TEA::Texture::CreateTexture("Assets/DragonColor.png");
-	TEA::Texture* diceNormalTexture = TEA::Texture::CreateTexture("Assets/DragonNormal.png");
+	dragonMaterial = Render::Material::CreateMaterial(Render::Color::GREEN, Render::Color(0.5f, 0.5f, 0.5f), Render::Color(1.0f, 1.0f, 1.0f), 8.0f);
+	dragonTexture = Render::Texture::CreateTexture("Assets/DragonColor.png");
+	Render::Texture* diceNormalTexture = Render::Texture::CreateTexture("Assets/DragonNormal.png");
 	dragonMaterial->SetShaderProgram(basicShaderProgram);
 
 	dragonMaterial->SetShaderProgramNormalMap(normalShaderProgram);
@@ -106,29 +106,29 @@ int Application::Init()
 	dragonMaterial->SetNormalMapActive(true);
 
 	//Here we create a model and assign it to the renderer.
-	currentModel = TEA::Model::CreateModel("Assets/Dragon.fbx", dragonMaterial);
+	currentModel = Render::Model::CreateModel("Assets/Dragon.fbx", dragonMaterial);
 	currentModel->GetTransform()->SetRotation(glm::vec3(-90.0f, 180.0f, 0.0f));
 	currentModel->GetTransform()->SetScale(glm::vec3(0.25f, 0.25f, 0.25f));
 
-	TEA::Renderer::GetInstance()->AddModel(currentModel);
+	Render::Renderer::GetInstance()->AddModel(currentModel);
 
 	//Now we create a camera and attach it to the renderer.
-	TEA::Camera* currentCamera = TEA::Camera::CreateCamera();
+	Render::Camera* currentCamera = Render::Camera::CreateCamera();
 	currentCamera->SetPosition(glm::vec3(0.0f, 0.0f, -40.0f));
 	currentCamera->SetAspectRel((GLfloat)windowWidth / (GLfloat)windowHeight);
 
-	TEA::Renderer::GetInstance()->SetCurrentCamera(currentCamera);
+	Render::Renderer::GetInstance()->SetCurrentCamera(currentCamera);
 
 	//Here we create the lights and add it to the renderer
-	ambientLight = new TEA::AmbientLight(TEA::Color(0.12f, 0.12f, 0.12f));
-	directionalLight = new TEA::DirectionalLight(glm::vec3(0.0f, 1.0f, 0.0f), TEA::Color::RED, TEA::Color::GREEN);
-	pointLight = new TEA::PointLight(glm::vec3(0.0f, 1.0f, 0.0f), TEA::Color::RED, TEA::Color::GREEN);
-	spotLight = new TEA::SpotLight(glm::vec3(1.0f, 0.0f, 1.0f), glm::vec3(0.0f, 1.0f, 1.0f), 0.45f, TEA::Color::RED, TEA::Color::GREEN);
+	ambientLight = new Render::AmbientLight(Render::Color(0.12f, 0.12f, 0.12f));
+	directionalLight = new Render::DirectionalLight(glm::vec3(0.0f, 1.0f, 0.0f), Render::Color::RED, Render::Color::GREEN);
+	pointLight = new Render::PointLight(glm::vec3(0.0f, 1.0f, 0.0f), Render::Color::RED, Render::Color::GREEN);
+	spotLight = new Render::SpotLight(glm::vec3(1.0f, 0.0f, 1.0f), glm::vec3(0.0f, 1.0f, 1.0f), 0.45f, Render::Color::RED, Render::Color::GREEN);
 
-	TEA::Renderer::GetInstance()->AddLight(ambientLight);
-	TEA::Renderer::GetInstance()->AddLight(directionalLight);
-	TEA::Renderer::GetInstance()->AddLight(pointLight);
-	TEA::Renderer::GetInstance()->AddLight(spotLight);
+	Render::Renderer::GetInstance()->AddLight(ambientLight);
+	Render::Renderer::GetInstance()->AddLight(directionalLight);
+	Render::Renderer::GetInstance()->AddLight(pointLight);
+	Render::Renderer::GetInstance()->AddLight(spotLight);
 	//---- ----
 	
 	posOffset = 0.0f;
@@ -267,7 +267,7 @@ void Application::PrintAppInfo()
 void Application::Refresh()
 {
 	try {
-		TEA::Renderer::GetInstance()->Refresh();
+		Render::Renderer::GetInstance()->Refresh();
 	}
 	catch (std::exception& e) {
 		const std::string message = " - in function Refresh()";
@@ -279,7 +279,7 @@ void Application::Refresh()
 }
 
 void Application::ResizeWindow(GLint width, GLint height) {
-	TEA::Renderer::GetInstance()->SetWindowViewport(width, height);
+	Render::Renderer::GetInstance()->SetWindowViewport(width, height);
 }
 
 void Application::KeyPressed(GLint key, GLint action) {
@@ -296,10 +296,10 @@ void Application::KeyPressed(GLint key, GLint action) {
 		case GLFW_KEY_2: //Create a Tetrahedron Model
 		{
 			posOffset += 2.5f;
-			TEA::Model* newModel = new TEA::Model(TEA::MODEL_TYPE::TETRAHEDRON, basicMaterial);
+			Render::Model* newModel = new Render::Model(Render::MODEL_TYPE::TETRAHEDRON, basicMaterial);
 			newModel->GetTransform()->SetPosition(glm::vec3(posOffset, 0, 0));
 
-			TEA::Renderer::GetInstance()->AddModel(newModel);
+			Render::Renderer::GetInstance()->AddModel(newModel);
 			std::cout << "Tetrahedron Model Loaded" << std::endl;
 		}
 		break;
@@ -307,10 +307,10 @@ void Application::KeyPressed(GLint key, GLint action) {
 		case GLFW_KEY_1: //Create a Triangle Model
 		{
 			posOffset += 2.5f;
-			TEA::Model* newModel = new TEA::Model(TEA::MODEL_TYPE::TRIANGLE, basicMaterial);
+			Render::Model* newModel = new Render::Model(Render::MODEL_TYPE::TRIANGLE, basicMaterial);
 			newModel->GetTransform()->SetPosition(glm::vec3(posOffset, 0, 0));
 
-			TEA::Renderer::GetInstance()->AddModel(newModel);
+			Render::Renderer::GetInstance()->AddModel(newModel);
 			std::cout << "Triangle Model Loaded" << std::endl;
 		}
 		break;
@@ -318,12 +318,12 @@ void Application::KeyPressed(GLint key, GLint action) {
 		case GLFW_KEY_3: //Create a Spot Model
 		{
 			posOffset += 2.5f;
-			TEA::Model* newModel = TEA::Model::CreateModel("Assets/spot.obj", spotMaterial);
+			Render::Model* newModel = Render::Model::CreateModel("Assets/spot.obj", spotMaterial);
 			newModel->GetTransform()->SetPosition(glm::vec3(posOffset, 0.0f, 0.0f));
 			newModel->GetTransform()->SetRotation(glm::vec3(-90.0f, 0.0f, 0.0f));
 			newModel->GetTransform()->SetScale(glm::vec3(0.75f, 0.75f, 0.75f));
 
-			TEA::Renderer::GetInstance()->AddModel(newModel);
+			Render::Renderer::GetInstance()->AddModel(newModel);
 			std::cout << "Cow Model Loaded" << std::endl;
 		}
 		break;
@@ -331,16 +331,16 @@ void Application::KeyPressed(GLint key, GLint action) {
 		case GLFW_KEY_4: //Create a Dice model
 		{
 			posOffset += 2.5f;
-			TEA::Material* newMaterial = TEA::Material::CreateMaterial(TEA::Color(0.1f, 0.3f, 0.7f), TEA::Color(0.1f, 0.3f, 0.7f), TEA::Color(1.0f, 1.0f, 1.0f), 8.0f);
-			newMaterial->SetColorTexture(TEA::Texture::CreateTexture("Assets/dado.png"));
-			newMaterial->SetNormalTexture(TEA::Texture::CreateTexture("Assets/dadoNormalMap.png"));
+			Render::Material* newMaterial = Render::Material::CreateMaterial(Render::Color(0.1f, 0.3f, 0.7f), Render::Color(0.1f, 0.3f, 0.7f), Render::Color(1.0f, 1.0f, 1.0f), 8.0f);
+			newMaterial->SetColorTexture(Render::Texture::CreateTexture("Assets/dado.png"));
+			newMaterial->SetNormalTexture(Render::Texture::CreateTexture("Assets/dadoNormalMap.png"));
 			newMaterial->SetShaderProgram(basicShaderProgram);
 			newMaterial->SetShaderProgramNormalMap(normalShaderProgram);
-			TEA::Model* newModel = new TEA::Model("Assets/dado.obj", newMaterial);
+			Render::Model* newModel = new Render::Model("Assets/dado.obj", newMaterial);
 			newMaterial->SetNormalMapActive(true);
 			newModel->GetTransform()->SetPosition(glm::vec3(posOffset, 0.0f, 0.0f));
 
-			TEA::Renderer::GetInstance()->AddModel(newModel);
+			Render::Renderer::GetInstance()->AddModel(newModel);
 			std::cout << "Dice Model Loaded" << std::endl;
 		}
 		break;
@@ -348,7 +348,7 @@ void Application::KeyPressed(GLint key, GLint action) {
 		case GLFW_KEY_N: //Deletes all models and show no one
 		{
 			posOffset = -2.5f;
-			TEA::Renderer::GetInstance()->RemoveAllModels();
+			Render::Renderer::GetInstance()->RemoveAllModels();
 
 			std::cout << "Models Removed" << std::endl;
 		}
@@ -357,7 +357,7 @@ void Application::KeyPressed(GLint key, GLint action) {
 		case GLFW_KEY_B: //Deletes the older model in the scene
 		{
 			posOffset -= 2.5f;
-			TEA::Renderer::GetInstance()->RemoveFirstModel();
+			Render::Renderer::GetInstance()->RemoveFirstModel();
 
 			std::cout << "First Model Removed" << std::endl;
 		}
@@ -365,22 +365,22 @@ void Application::KeyPressed(GLint key, GLint action) {
 
 		case GLFW_KEY_V: //Deletes the last added model
 		{
-			TEA::Renderer::GetInstance()->RemoveLastModel();
+			Render::Renderer::GetInstance()->RemoveLastModel();
 
 			std::cout << "Last Model Removed" << std::endl;
 		}
 		break;
 
 		case GLFW_KEY_F:
-			TEA::Renderer::GetInstance()->SetModelRepresentationToSolid();
+			Render::Renderer::GetInstance()->SetModelRepresentationToSolid();
 			break;
 
 		case GLFW_KEY_H:
-			TEA::Renderer::GetInstance()->SetModelRepresentationToTexture();
+			Render::Renderer::GetInstance()->SetModelRepresentationToTexture();
 			break;
 
 		case GLFW_KEY_G:
-			TEA::Renderer::GetInstance()->SetModelRepresentationToWireframe();
+			Render::Renderer::GetInstance()->SetModelRepresentationToWireframe();
 			break;
 
 		case GLFW_KEY_J:
@@ -415,15 +415,15 @@ void Application::MouseMovement(GLdouble xpos, GLdouble ypos)
 
 void Application::MouseScroll(GLdouble xoffset, GLdouble yoffset)
 {
-	TEA::Color& bgColor = TEA::Renderer::GetInstance()->GetBackgroundColor();
+	Render::Color& bgColor = Render::Renderer::GetInstance()->GetBackgroundColor();
 
 	bgColor.SetColor(
-		bgColor[TEA::R] + COLOR_MOUSE_WHEEL_MULTIPLIER * yoffset,
-		bgColor[TEA::G] + COLOR_MOUSE_WHEEL_MULTIPLIER * yoffset,
-		bgColor[TEA::B] + COLOR_MOUSE_WHEEL_MULTIPLIER * yoffset
+		bgColor[Render::R] + COLOR_MOUSE_WHEEL_MULTIPLIER * yoffset,
+		bgColor[Render::G] + COLOR_MOUSE_WHEEL_MULTIPLIER * yoffset,
+		bgColor[Render::B] + COLOR_MOUSE_WHEEL_MULTIPLIER * yoffset
 	);
 
-	TEA::Renderer::GetInstance()->SetBackgroundColor(bgColor);
+	Render::Renderer::GetInstance()->SetBackgroundColor(bgColor);
 
 	window_refresh_callback(window);
 }
