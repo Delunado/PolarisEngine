@@ -4,7 +4,7 @@
 
 # What is Polaris Engine?
 
-Polaris Engine is an early-stage 2D/3D Game Engine created from scratch for the sake of learning. It's being build using C++ &amp; OpenGL, 
+Polaris Engine is an early-stage 2D/3D Game Engine created from scratch for the sake of learning. It's being build using C++ &amp; OpenGL. 
 
 The game engine contains several modules and submodules, as well as a visual editor.
 
