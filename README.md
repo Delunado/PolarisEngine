@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/version-v0.1-green)
+### Polaris Engine ![Version](https://img.shields.io/badge/version-v0.1-green) ![License](https://img.shields.io/badge/License-Apache2.0-yellow)
 
 
 
