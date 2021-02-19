@@ -2,7 +2,7 @@
 
 Here you can see the different features that will be added to each version.
 
-
+<br>
 
 ## Version 0.1 - 18/2/2021
 
@@ -14,6 +14,7 @@ This is the first version of Polaris Engine. It includes the basics of the Game 
 - Camera Controller: you can move around using the mouse and keyboard.
 - Input Module started: Input polling added. You can get if a key or mouse button is pressed or not, and get the actual mouse position.
 
+<br>
 
 
 ## Version 0.2 - Around mid-end March.
@@ -63,6 +64,7 @@ This version includes:
   - Better internal and external documentation.
   - General optimizations and refactoring.
 
+<br>
 
 
 ## Version 0.3 - Around mid-end April / start May.
@@ -114,6 +116,7 @@ This version includes:
   - Better internal and external documentation.
   - General optimizations and refactoring.
 
+<br>
 
 
 ## Version 0.4
