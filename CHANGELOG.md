@@ -2,6 +2,7 @@
 
 Here you can see the different added features and fixed bugs in each version.
 
+<br>
 
 
 ## - Version 0.1 - 18/2/2021 -
