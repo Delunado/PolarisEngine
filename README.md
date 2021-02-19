@@ -40,7 +40,7 @@ The game engine contains several modules and submodules, as well as a visual edi
 
 The Visual Editor hasn't been started yet. It is expected to have a very early version on Version 0.2.
 
-
+<br>
 
 ## How to compile and use Polaris Engine
 
@@ -52,7 +52,7 @@ Right now, Polaris Engine is only compilable and usable on Windows. This reposit
 
 **Important:** Right now, Polaris Engine is only compilable in x64 mode. This will be fixed soon. Sorry.
 
-
+<br>
 
 ## Quick links
 
