@@ -28,6 +28,7 @@ public:
 	void PrintAppInfo();
 
 private:
+	bool isRunning;
 
 	CameraController cameraController;
 	Window window;

@@ -14,11 +14,13 @@
 #include "Application.h"
 
 
-Application::Application()
+Application::Application(): isRunning(false)
 {}
 
 int Application::Init(GLint windowHeight, GLint windowWidth)
 {
+	isRunning = true;
+
 	window.Init(windowWidth, windowHeight, "Polaris Engine V-0.2");
 	window.SetUserPointer(this);
 
@@ -116,7 +118,7 @@ int Application::Init(GLint windowHeight, GLint windowWidth)
 void Application::Run()
 {
 	//Main Loop
-	while (window.IsRunning()) {
+	while (isRunning) {
 
 		//Mandatory code in loop
 		time.Update();
@@ -161,12 +163,17 @@ void Application::Run()
 		window.Update();
 
 		window_refresh_callback(window.GetWindowPointer());
+
+		if (!window.IsRunning()) {
+			isRunning = false;
+		}
 		//-----------------------
 	}
 }
 
 void Application::Close()
 {
+	window.Close();
 	window.Destroy();
 	glfwTerminate();
 
@@ -367,7 +374,7 @@ void Application::KeyPressed(GLint key, GLint action) {
 			break;
 
 		case GLFW_KEY_ESCAPE: //Close the application
-			window.Close();
+			isRunning = false;
 			break;
 
 		default:
