@@ -11,20 +11,13 @@ The game engine contains several modules and submodules, as well as a visual edi
 ###### Modules
 
 - **Core**: Basic features, the core pieces of the engine. ![Version](https://img.shields.io/badge/v0.1.1-green)
-
 - **Math**: It contains all the math features: Vectors, Matrices, etc. *Right now using GLM until this module is started*. ![Version](https://img.shields.io/badge/NotStarted-red)
-
 - **Rendering**: It contains all the rendering features. 3D/2D Renderer, Models, Shaders, etc. ![Version](https://img.shields.io/badge/v0.1-green)
-
 - **UI**: It contains features for adding text, menus, etc. Used In-game and in the Editor. ![Version](https://img.shields.io/badge/NotStarted-red)
-
 - **Physics**: It contains features related to physics: Rigidbodies, collisions, etc. ![Version](https://img.shields.io/badge/NotStarted-red)
-
 - **Audio**: It contains audio reproduction features. ![Version](https://img.shields.io/badge/NotStarted-red)
-
 - **Scripting**: It contains scripting features, so we can add scripts to the game objects. ![Version](https://img.shields.io/badge/NotStarted-red)
-
-  
+- **Events**: It contains an event system to structure all the application. ![Version](https://img.shields.io/badge/NotStarted-red)
 
 ###### Submodules
 
