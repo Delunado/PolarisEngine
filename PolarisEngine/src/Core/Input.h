@@ -5,6 +5,7 @@
 
 #include "KeyCodes.h"
 #include "MouseCodes.h"
+#include "Window.h"
 
 class Input
 {
@@ -24,7 +25,7 @@ private:
 	glm::vec2 GetMousePositionImplementation();
 
 public:
-	static void Initialize(GLFWwindow* window);
+	static void Initialize(const Window& window);
 
 	static bool GetKeyPressed(int key);
 	static bool IsMouseButtonPressed(int mouseButton);

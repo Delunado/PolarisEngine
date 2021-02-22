@@ -1,7 +1,6 @@
 #pragma once
 
 #include <GL/glew.h>
-#include <GLFW/glfw3.h>
 
 #include "ShaderProgram.h"
 #include "Model.h"
@@ -15,6 +14,7 @@
 
 #include "TimeStep.h"
 #include "CameraController.h"
+#include "Window.h"
 
 class Application
 {
@@ -28,8 +28,9 @@ public:
 	void PrintAppInfo();
 
 private:
-	GLFWwindow* window;
+
 	CameraController cameraController;
+	Window window;
 
 	GLint windowHeight;
 	GLint windowWidth;

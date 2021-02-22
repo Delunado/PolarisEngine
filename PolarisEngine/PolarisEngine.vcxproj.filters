@@ -108,6 +108,9 @@
     <ClInclude Include="src\Maths\Vector3f.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Core\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\main.cpp">
@@ -195,6 +198,9 @@
       <Filter>CPP Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Maths\Vector3f.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Window.cpp">
       <Filter>CPP Files</Filter>
     </ClCompile>
   </ItemGroup>

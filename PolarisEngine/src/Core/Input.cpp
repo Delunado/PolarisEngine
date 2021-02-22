@@ -8,11 +8,11 @@ Input::Input(): window(nullptr), mouseSensitivity(0.02f) {
 
 }
 
-void Input::Initialize(GLFWwindow* window)
+void Input::Initialize(const Window& window)
 {
 	instance = new Input();
 
-	instance->window = window;
+	instance->window = window.GetWindowPointer();
 }
 
 

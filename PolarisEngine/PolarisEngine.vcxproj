@@ -52,6 +52,7 @@
     <ClInclude Include="src\Rendering\UniformVec3f.h" />
     <ClInclude Include="src\Maths\Vector3f.h" />
     <ClInclude Include="src\Core\TimeStep.h" />
+    <ClInclude Include="src\Core\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\CameraController.cpp" />
@@ -83,6 +84,7 @@
     <ClCompile Include="src\Rendering\UniformVec3f.cpp" />
     <ClCompile Include="src\Maths\Vector3f.cpp" />
     <ClCompile Include="src\Core\TimeStep.cpp" />
+    <ClCompile Include="src\Core\Window.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

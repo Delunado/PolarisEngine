@@ -35,39 +35,31 @@ int Application::Init()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
 
-	window = glfwCreateWindow(windowWidth, windowHeight, "Polaris Engine V-0.1", nullptr, nullptr);
-	glfwSetWindowUserPointer(window, this);
+	GLint windowCode = window.Init(windowWidth, windowHeight, "Polaris Engine V-0.2");
+	assert(windowCode != -1);
 
-	if (window == nullptr) {
-		std::cout << "Failed to open GLFW window" << std::endl;
-		glfwTerminate(); //Freeing GLFW resources
-		return -2;
-	}
-
-	glfwMakeContextCurrent(window);
-
+	window.SetUserPointer(this);
 
 	//Initializing GLEW
 	glewExperimental = true;
 	if (glewInit() != GLEW_OK) {
 		std::cout << "Failed to initialize GLEW" << std::endl;
-		glfwDestroyWindow(window);
+		glfwDestroyWindow(window.GetWindowPointer());
 		glfwTerminate();
 		return -3;
 	}
 
 	//Here we set the callbacks
-	glfwSetWindowRefreshCallback(window, window_refresh_callback);
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-	glfwSetKeyCallback(window, key_callback);
-	glfwSetMouseButtonCallback(window, mouse_button_callback);
-	glfwSetCursorPosCallback(window, mouse_move_callback);
-	glfwSetScrollCallback(window, scroll_callback);
+	glfwSetWindowRefreshCallback(window.GetWindowPointer(), window_refresh_callback);
+	glfwSetFramebufferSizeCallback(window.GetWindowPointer(), framebuffer_size_callback);
+	glfwSetKeyCallback(window.GetWindowPointer(), key_callback);
+	glfwSetMouseButtonCallback(window.GetWindowPointer(), mouse_button_callback);
+	glfwSetCursorPosCallback(window.GetWindowPointer(), mouse_move_callback);
+	glfwSetScrollCallback(window.GetWindowPointer(), scroll_callback);
 
 	//This sets the cursor to the center of the screen and disable it.
-	glfwSetCursorPos(window, windowWidth / 2.0f, windowHeight / 2.0f);
-	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-
+	window.SetCursorPos(windowWidth / 2.0f, windowHeight / 2.0f);
+	window.SetCursorLocked(true);
 
 	//---- Init Polaris Classes ----
 	Render::Renderer::GetInstance()->InitRenderer();
@@ -142,7 +134,7 @@ int Application::Init()
 void Application::Run()
 {
 	//Main Loop
-	while (!glfwWindowShouldClose(window)) {
+	while (window.IsRunning()) {
 
 		//Mandatory code in loop
 		time.Update();
@@ -184,7 +176,7 @@ void Application::Run()
 		cameraController.Update(time.GetDeltaTime());
 
 		//Mandatory code in loop
-		window_refresh_callback(window);
+		window_refresh_callback(window.GetWindowPointer());
 
 		glfwPollEvents();
 		//-----------------------
@@ -193,8 +185,7 @@ void Application::Run()
 
 void Application::Close()
 {
-	glfwDestroyWindow(window);
-	window = nullptr;
+	window.Destroy();
 	glfwTerminate();
 
 	//Remove all this code, using a manager for each type that deletes everything itself @TODO
@@ -272,10 +263,10 @@ void Application::Refresh()
 	catch (std::exception& e) {
 		const std::string message = " - in function Refresh()";
 		std::cout << e.what() << std::endl;
-		glfwSetWindowShouldClose(window, GLFW_TRUE);
+		window.Close();
 	}
 
-	glfwSwapBuffers(window);
+	window.SwapBuffers();
 }
 
 void Application::ResizeWindow(GLint width, GLint height) {
@@ -286,11 +277,11 @@ void Application::KeyPressed(GLint key, GLint action) {
 	if (action == GLFW_PRESS) {
 		switch (key) {
 		case GLFW_KEY_C: //Clamp the cursor in the screen.
-			glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+			window.SetCursorLocked(false);
 			break;
 
 		case GLFW_KEY_X: //Free the cursor in the screen.
-			glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+			window.SetCursorLocked(true);
 			break;
 
 		case GLFW_KEY_2: //Create a Tetrahedron Model
@@ -392,7 +383,7 @@ void Application::KeyPressed(GLint key, GLint action) {
 			break;
 
 		case GLFW_KEY_ESCAPE: //Close the application
-			glfwSetWindowShouldClose(window, GLFW_TRUE);
+			window.Close();
 			break;
 
 		default:
@@ -400,7 +391,7 @@ void Application::KeyPressed(GLint key, GLint action) {
 		}
 	}
 
-	window_refresh_callback(window);
+	window_refresh_callback(window.GetWindowPointer());
 }
 
 void Application::MousePressed(GLint button, GLint action) 
@@ -425,5 +416,5 @@ void Application::MouseScroll(GLdouble xoffset, GLdouble yoffset)
 
 	Render::Renderer::GetInstance()->SetBackgroundColor(bgColor);
 
-	window_refresh_callback(window);
+	window_refresh_callback(window.GetWindowPointer());
 }
