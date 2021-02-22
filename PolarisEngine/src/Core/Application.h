@@ -19,9 +19,9 @@
 class Application
 {
 public:
-	Application(GLint windowHeight = 1080, GLint windowWidth = 1920);
+	Application();
 
-	int Init();
+	int Init(GLint windowHeight = 1080, GLint windowWidth = 1920);
 	void Run();
 	void Close();
 
@@ -31,9 +31,6 @@ private:
 
 	CameraController cameraController;
 	Window window;
-
-	GLint windowHeight;
-	GLint windowWidth;
 
 	Time time;
 
@@ -76,7 +73,7 @@ private:
 		app->ResizeWindow(width, height);
 	}
 
-	void ResizeWindow(GLint width, GLint height);
+	void ResizeWindow(GLint width, GLint height); 
 
 
 	//Este callback será llamado cada vez que se pulse una tecla dirigida al área de dibujo OpenGL

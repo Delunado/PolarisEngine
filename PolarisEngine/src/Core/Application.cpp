@@ -14,30 +14,12 @@
 #include "Application.h"
 
 
-Application::Application(GLint windowHeight, GLint windowWidth) : windowHeight(windowHeight), windowWidth(windowWidth)
+Application::Application()
+{}
+
+int Application::Init(GLint windowHeight, GLint windowWidth)
 {
-	
-}
-
-int Application::Init()
-{
-	//First we initialize GLFW, only once in runtime.
-	if (glfwInit() != GLFW_TRUE) {
-		std::cout << "Failed to initialize GLFW" << std::endl;
-		return -1;
-	}
-
-	//Here we define the OpenGL context features we want it to use, like samples number, core Profile mode, etc.
-	//Antialiasing with 4 samples
-	glfwWindowHint(GLFW_SAMPLES, 4);
-
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
-
-	GLint windowCode = window.Init(windowWidth, windowHeight, "Polaris Engine V-0.2");
-	assert(windowCode != -1);
-
+	window.Init(windowWidth, windowHeight, "Polaris Engine V-0.2");
 	window.SetUserPointer(this);
 
 	//Initializing GLEW
@@ -56,10 +38,6 @@ int Application::Init()
 	glfwSetMouseButtonCallback(window.GetWindowPointer(), mouse_button_callback);
 	glfwSetCursorPosCallback(window.GetWindowPointer(), mouse_move_callback);
 	glfwSetScrollCallback(window.GetWindowPointer(), scroll_callback);
-
-	//This sets the cursor to the center of the screen and disable it.
-	window.SetCursorPos(windowWidth / 2.0f, windowHeight / 2.0f);
-	window.SetCursorLocked(true);
 
 	//---- Init Polaris Classes ----
 	Render::Renderer::GetInstance()->InitRenderer();
@@ -128,6 +106,10 @@ int Application::Init()
 	time.Init();
 	Input::Initialize(window);
 
+	//This sets the cursor to the center of the screen and disable it.
+	Input::SetCursorPos(windowWidth / 2.0f, windowHeight / 2.0f);
+	Input::SetCursorLocked(true);
+
 	return 0;
 }
 
@@ -176,9 +158,9 @@ void Application::Run()
 		cameraController.Update(time.GetDeltaTime());
 
 		//Mandatory code in loop
-		window_refresh_callback(window.GetWindowPointer());
+		window.Update();
 
-		glfwPollEvents();
+		window_refresh_callback(window.GetWindowPointer());
 		//-----------------------
 	}
 }
@@ -271,17 +253,19 @@ void Application::Refresh()
 
 void Application::ResizeWindow(GLint width, GLint height) {
 	Render::Renderer::GetInstance()->SetWindowViewport(width, height);
+	window.SetHeight(height);
+	window.SetHeight(width);
 }
 
 void Application::KeyPressed(GLint key, GLint action) {
 	if (action == GLFW_PRESS) {
 		switch (key) {
 		case GLFW_KEY_C: //Clamp the cursor in the screen.
-			window.SetCursorLocked(false);
+			Input::SetCursorLocked(false);
 			break;
 
 		case GLFW_KEY_X: //Free the cursor in the screen.
-			window.SetCursorLocked(true);
+			Input::SetCursorLocked(true);
 			break;
 
 		case GLFW_KEY_2: //Create a Tetrahedron Model

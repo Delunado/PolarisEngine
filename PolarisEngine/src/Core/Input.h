@@ -24,6 +24,9 @@ private:
 	float GetMouseYImplementation();
 	glm::vec2 GetMousePositionImplementation();
 
+	void SetCursorPosImplementation(int xPos, int yPos);
+	void SetCursorLockedImplementation(bool value);
+
 public:
 	static void Initialize(const Window& window);
 
@@ -35,5 +38,7 @@ public:
 	static glm::vec2 GetMousePosition();
 	static float GetMouseSensitivity();
 	static float SetMouseSensitivity(float mouseSensitivity);
+	static void SetCursorPos(int xPos, int yPos);
+	static void SetCursorLocked(bool value);
 };
 
