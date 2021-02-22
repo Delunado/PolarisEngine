@@ -13,7 +13,19 @@ Here you can see the different added features and fixed bugs in each version.
 #### Features added
 
 - Core:
-  - Window Abstraction class.
+  - Window Abstraction class, which encapsulates GLFW methods. Not fully disengaged  yet, because of events.
+
+
+
+#### Bugs fixed
+
+- 
+
+
+
+#### Other improvements
+
+- Application life cycle is now separated from Window life cycle.
 
 
 
