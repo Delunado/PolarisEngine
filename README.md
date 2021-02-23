@@ -1,4 +1,4 @@
-### Polaris Engine ![Version](https://img.shields.io/badge/version-v0.1.0.1-green) ![License](https://img.shields.io/badge/License-Apache2.0-yellow)
+### Polaris Engine ![Version](https://img.shields.io/badge/version-v0.1.1-green) ![License](https://img.shields.io/badge/License-Apache2.0-yellow)
 
 
 
@@ -10,7 +10,7 @@ The game engine contains several modules and submodules, as well as a visual edi
 
 ###### Modules
 
-- **Core**: Basic features, the core pieces of the engine. ![Version](https://img.shields.io/badge/v0.1.1-green)
+- **Core**: Basic features, the core pieces of the engine. ![Version](https://img.shields.io/badge/v0.2-green)
 - **Math**: It contains all the math features: Vectors, Matrices, etc. *Right now using GLM until this module is started*. ![Version](https://img.shields.io/badge/NotStarted-red)
 - **Rendering**: It contains all the rendering features. 3D/2D Renderer, Models, Shaders, etc. ![Version](https://img.shields.io/badge/v0.1-green)
 - **UI**: It contains features for adding text, menus, etc. Used In-game and in the Editor. ![Version](https://img.shields.io/badge/NotStarted-red)

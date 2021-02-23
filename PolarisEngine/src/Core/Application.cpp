@@ -10,11 +10,15 @@
 
 #include "Color.h"
 #include "Input.h"
+#include "TimeStep.h"
 
 #include "Application.h"
 
 
-Application::Application(): isRunning(false)
+Application::Application(): isRunning(false), basicShaderProgram(nullptr), ambientLight(nullptr), normalShaderProgram(nullptr), 
+vertexShader(nullptr),fragmentShader(nullptr), currentModel(nullptr), basicMaterial(nullptr), dragonMaterial(nullptr), 
+spotMaterial(nullptr), dragonTexture(nullptr), spotTexture(nullptr), pointLight(nullptr), directionalLight(nullptr), 
+spotLight(nullptr), posOffset(0.0f)
 {}
 
 int Application::Init(GLint windowHeight, GLint windowWidth)
@@ -101,12 +105,10 @@ int Application::Init(GLint windowHeight, GLint windowWidth)
 	Render::Renderer::GetInstance()->AddLight(directionalLight);
 	Render::Renderer::GetInstance()->AddLight(pointLight);
 	Render::Renderer::GetInstance()->AddLight(spotLight);
-	//---- ----
-	
-	posOffset = 0.0f;
 
-	time.Init();
-	Input::Initialize(window);
+	//---- INIT MODULES ----
+	Time::Init();
+	Input::Init(window);
 
 	//This sets the cursor to the center of the screen and disable it.
 	Input::SetCursorPos(windowWidth / 2.0f, windowHeight / 2.0f);
@@ -121,7 +123,7 @@ void Application::Run()
 	while (isRunning) {
 
 		//Mandatory code in loop
-		time.Update();
+		Time::Update();
 		//-----------------------
 
 		/*ROTATION DRAGON*/
@@ -157,7 +159,7 @@ void Application::Run()
 
 		//currentCamera->SetLookAtPoint(currentModel->GetTransform()->GetPosition());
 
-		cameraController.Update(time.GetDeltaTime());
+		cameraController.Update(Time::GetDeltaTime());
 
 		//Mandatory code in loop
 		window.Update();

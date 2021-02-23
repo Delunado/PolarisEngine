@@ -28,7 +28,7 @@ private:
 	void SetCursorLockedImplementation(bool value);
 
 public:
-	static void Initialize(const Window& window);
+	static void Init(const Window& window);
 
 	static bool GetKeyPressed(int key);
 	static bool IsMouseButtonPressed(int mouseButton);

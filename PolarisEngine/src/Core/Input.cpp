@@ -3,12 +3,11 @@
 
 Input* Input::instance = nullptr;
 
-
 Input::Input(): window(nullptr), mouseSensitivity(0.02f) {
 
 }
 
-void Input::Initialize(const Window& window)
+void Input::Init(const Window& window)
 {
 	instance = new Input();
 

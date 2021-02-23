@@ -5,23 +5,31 @@
 class Time
 {
 private:
+	Time();
+	~Time();
+
+	static Time* instance;
+
 	//Time between frames
 	GLfloat deltaTime;
 
 	GLfloat lastFrameTime;
 
 public:
-	Time();
-	~Time();
+	static void Init();
+	void InitImplementation();
 
-	void Init();
-	void Update();
+	static void Update();
+	void UpdateImplementation();
 
-	GLfloat GetDeltaTime();
+	static GLfloat GetDeltaTime();
+	GLfloat GetDeltaTimeImplementation();
 
 	/// <summary>
 	/// Returns the elapsed time since the application started.
 	/// </summary>
 	/// <returns>Time in seconds</returns>
-	GLfloat GetTimeSinceStart();
+	static GLfloat GetTimeSinceStart();
+	static GLfloat GetTimeSinceStartImplementation();
+
 };

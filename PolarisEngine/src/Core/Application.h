@@ -12,7 +12,6 @@
 #include "SpotLight.h"
 #include "DirectionalLight.h"
 
-#include "TimeStep.h"
 #include "CameraController.h"
 #include "Window.h"
 
@@ -32,8 +31,6 @@ private:
 
 	CameraController cameraController;
 	Window window;
-
-	Time time;
 
 	//Constants
 	const GLfloat COLOR_MOUSE_WHEEL_MULTIPLIER = 0.01f;

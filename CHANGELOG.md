@@ -10,10 +10,11 @@ Here you can see the different added features and fixed bugs in each version.
 
 
 
-#### Features added
+#### Features added/upgraded
 
 - Core:
   - Window Abstraction class, which encapsulates GLFW methods. Not fully disengaged  yet, because of events.
+  - Now Time class is static, so you can access Time data from everywhere in the application.
 
 
 
@@ -26,6 +27,8 @@ Here you can see the different added features and fixed bugs in each version.
 #### Other improvements
 
 - Application life cycle is now separated from Window life cycle.
+
+  
 
 
 
