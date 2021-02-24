@@ -9,20 +9,19 @@ int main(int argc, char** argv) {
 		Application app;
 		app.PrintAppInfo();
 
-		std::cout << "Starting Polaris Engine" << std::endl;
+		Log::PrintMessage("Starting Polaris Engine");
 		int appInit = app.Init();
 
 		if (appInit != 0) return appInit;
 
-		std::cout << "Running Polaris Engine" << std::endl;
+		Log::PrintMessage("Running Polaris Engine");
 		app.Run();
 
-		std::cout << "Closing Polaris Engine" << std::endl;
+		Log::PrintMessage("Closing Polaris Engine");
 		app.Close();
-
 	}
 	catch (std::exception & e) {
-		std::cout << e.what() << std::endl;
+		Log::PrintMessage(e.what());
 		return -4;
 	}
 }

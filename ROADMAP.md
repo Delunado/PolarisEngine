@@ -51,7 +51,7 @@ This version includes:
 
     
 
-- **Logger/Profiler**
+- **Debugger**
 
   - Log-To-Console system.
 
@@ -89,11 +89,11 @@ This version includes:
 
 - **UI**:
 
-  - The second visual tool: Models properties modification: Transform properties, Rendering properties, etc.
+  - The second visual tool. Models properties modification: Transform properties, Rendering properties, etc.
 
     
 
-- **Logger/Profiler**
+- **Debugger**
 
   - Log-To-File system.
 

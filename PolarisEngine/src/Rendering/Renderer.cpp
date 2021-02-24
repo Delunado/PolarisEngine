@@ -1,11 +1,13 @@
-#include <iostream>
 #include <exception>
+#include <iostream>
 
 #include "Model.h"
 #include "Camera.h"
 #include "Mesh.h"
 #include "Transform.h"
 #include "Light.h"
+
+#include "Debug.h"
 
 #include "Renderer.h"
 
@@ -88,12 +90,17 @@ namespace Render {
 			currentCamera->SetAspectRel((float)width / (float)height);
 	}
 
-	void Renderer::PrintContextPropierties()
+	void Renderer::PrintContextProperties()
 	{
-		std::cout << glGetString(GL_RENDERER) << std::endl
-			<< glGetString(GL_VENDOR) << std::endl
-			<< glGetString(GL_VERSION) << std::endl
-			<< glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
+		std::string glRenderer((const char*)glGetString(GL_RENDERER));
+		std::string glVendor((const char*) glGetString(GL_VENDOR));
+		std::string glVersion((const char*)glGetString(GL_VERSION));
+		std::string glShadingLanguageVersion((const char*)glGetString(GL_SHADING_LANGUAGE_VERSION));
+
+		Log::PrintMessage(glRenderer);
+		Log::PrintMessage(glVendor);
+		Log::PrintMessage(glVersion);
+		Log::PrintMessage(glShadingLanguageVersion);
 	}
 
 	void Renderer::SetBackgroundColor(Color& newColor)

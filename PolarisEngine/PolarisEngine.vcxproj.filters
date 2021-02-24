@@ -203,5 +203,8 @@
     <ClCompile Include="src\Core\Window.cpp">
       <Filter>CPP Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Core\Debug.cpp">
+      <Filter>CPP Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

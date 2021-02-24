@@ -47,7 +47,7 @@ namespace Render {
 		void SetWindowViewport(int width, int height);
 
 		//Prints the actual 3D Context Propierties
-		void PrintContextPropierties();
+		void PrintContextProperties();
 
 		//Change the background color, indicating the 3 color coordinates
 		void SetBackgroundColor(Color& newColor);

@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "Renderer.h"
 
 #include "Shader.h"
@@ -12,12 +10,14 @@
 #include "Input.h"
 #include "TimeStep.h"
 
+#include "Debug.h"
+
 #include "Application.h"
 
 
-Application::Application(): isRunning(false), basicShaderProgram(nullptr), ambientLight(nullptr), normalShaderProgram(nullptr), 
-vertexShader(nullptr),fragmentShader(nullptr), currentModel(nullptr), basicMaterial(nullptr), dragonMaterial(nullptr), 
-spotMaterial(nullptr), dragonTexture(nullptr), spotTexture(nullptr), pointLight(nullptr), directionalLight(nullptr), 
+Application::Application() : isRunning(false), basicShaderProgram(nullptr), ambientLight(nullptr), normalShaderProgram(nullptr),
+vertexShader(nullptr), fragmentShader(nullptr), currentModel(nullptr), basicMaterial(nullptr), dragonMaterial(nullptr),
+spotMaterial(nullptr), dragonTexture(nullptr), spotTexture(nullptr), pointLight(nullptr), directionalLight(nullptr),
 spotLight(nullptr), posOffset(0.0f)
 {}
 
@@ -31,7 +31,7 @@ int Application::Init(GLint windowHeight, GLint windowWidth)
 	//Initializing GLEW
 	glewExperimental = true;
 	if (glewInit() != GLEW_OK) {
-		std::cout << "Failed to initialize GLEW" << std::endl;
+		Log::PrintMessage("Failed to initialize GLEW");
 		glfwDestroyWindow(window.GetWindowPointer());
 		glfwTerminate();
 		return -3;
@@ -213,37 +213,37 @@ void Application::Close()
 
 void Application::PrintAppInfo()
 {
-	std::cout << "X/C: LOCK MOUSE CURSOR/UNLOCK MOUSE CURSOR " << std::endl;
-	std::cout << "--" << std::endl;
+	Log::PrintMessage("X/C: LOCK MOUSE CURSOR/UNLOCK MOUSE CURSOR ");
+	Log::PrintMessage("--");
 
-	std::cout << "CAMERA: " << std::endl;
-	std::cout << "-- KEYBOARD --" << std::endl;
-	std::cout << "- W/S: FORWARD/BACKWARD: " << std::endl;
-	std::cout << "- A/D: LEFT/RIGHT: " << std::endl;
-	std::cout << "- Q/E: UP/DOWN: " << std::endl;
+	Log::PrintMessage("CAMERA: ");
+	Log::PrintMessage("-- KEYBOARD --");
+	Log::PrintMessage("- W/S: FORWARD/BACKWARD: ");
+	Log::PrintMessage("- A/D: LEFT/RIGHT: ");
+	Log::PrintMessage("- Q/E: UP/DOWN: ");
 
-	std::cout << "-- MOUSE --" << std::endl;
-	std::cout << "- MOVE MOUSE: PAN/TILT " << std::endl;
-	std::cout << "- MOVE MOUSE + LEFT CLICK: DOLLY " << std::endl;
-	std::cout << "- MOVE MOUSE + RIGHT CLICK: CRANE " << std::endl;
-	std::cout << "- MOVE MOUSE + LEFT CLICK + RIGHT CLICK: ORBIT " << std::endl;
-	std::cout << "- MOVE MOUSE + MIDDLE CLICK: ZOOM " << std::endl;
+	Log::PrintMessage("-- MOUSE --");
+	Log::PrintMessage("- MOVE MOUSE: PAN/TILT ");
+	Log::PrintMessage("- MOVE MOUSE + LEFT CLICK: DOLLY ");
+	Log::PrintMessage("- MOVE MOUSE + RIGHT CLICK: CRANE ");
+	Log::PrintMessage("- MOVE MOUSE + LEFT CLICK + RIGHT CLICK: ORBIT ");
+	Log::PrintMessage("- MOVE MOUSE + MIDDLE CLICK: ZOOM ");
 
-	std::cout << "--" << std::endl;
+	Log::PrintMessage("--");
 
-	std::cout << "FUNCTIONS: " << std::endl;
-	std::cout << "- 1: LOAD TRIANGLE " << std::endl;
-	std::cout << "- 2: LOAD TETRAHEDRO " << std::endl;
-	std::cout << "- 3: LOAD COW MODEL " << std::endl;
-	std::cout << "- 4: LOAD DICE MODEL " << std::endl;
-	std::cout << "- V: REMOVE LAST CREATED MODEL " << std::endl;
-	std::cout << "- B: REMOVE OLDER MODEL " << std::endl;
-	std::cout << "- N: REMOVE ALL MODELS " << std::endl;
-	std::cout << "- F: ACTIVE SOLID MODE " << std::endl;
-	std::cout << "- G: ACTIVE WIREFRAME MODE " << std::endl;
-	std::cout << "- H: ACTIVE TEXTURE MODE " << std::endl;
-	std::cout << "- J: DEACTIVATE NORMAL MAPPING " << std::endl;
-	std::cout << "- K: ACTIVATE NORMAL MAPPING " << std::endl;
+	Log::PrintMessage("FUNCTIONS: ");
+	Log::PrintMessage("- 1: LOAD TRIANGLE ");
+	Log::PrintMessage("- 2: LOAD TETRAHEDRO ");
+	Log::PrintMessage("- 3: LOAD COW MODEL ");
+	Log::PrintMessage("- 4: LOAD DICE MODEL ");
+	Log::PrintMessage("- V: REMOVE LAST CREATED MODEL ");
+	Log::PrintMessage("- B: REMOVE OLDER MODEL ");
+	Log::PrintMessage("- N: REMOVE ALL MODELS ");
+	Log::PrintMessage("- F: ACTIVE SOLID MODE ");
+	Log::PrintMessage("- G: ACTIVE WIREFRAME MODE ");
+	Log::PrintMessage("- H: ACTIVE TEXTURE MODE ");
+	Log::PrintMessage("- J: DEACTIVATE NORMAL MAPPING ");
+	Log::PrintMessage("- K: ACTIVATE NORMAL MAPPING ");
 }
 
 void Application::Refresh()
@@ -253,7 +253,7 @@ void Application::Refresh()
 	}
 	catch (std::exception& e) {
 		const std::string message = " - in function Refresh()";
-		std::cout << e.what() << std::endl;
+		Log::PrintMessage(e.what());
 		window.Close();
 	}
 
@@ -284,7 +284,7 @@ void Application::KeyPressed(GLint key, GLint action) {
 			newModel->GetTransform()->SetPosition(glm::vec3(posOffset, 0, 0));
 
 			Render::Renderer::GetInstance()->AddModel(newModel);
-			std::cout << "Tetrahedron Model Loaded" << std::endl;
+			Log::PrintMessage("Tetrahedron Model Loaded");
 		}
 		break;
 
@@ -295,7 +295,7 @@ void Application::KeyPressed(GLint key, GLint action) {
 			newModel->GetTransform()->SetPosition(glm::vec3(posOffset, 0, 0));
 
 			Render::Renderer::GetInstance()->AddModel(newModel);
-			std::cout << "Triangle Model Loaded" << std::endl;
+			Log::PrintMessage("Triangle Model Loaded");
 		}
 		break;
 
@@ -308,7 +308,7 @@ void Application::KeyPressed(GLint key, GLint action) {
 			newModel->GetTransform()->SetScale(glm::vec3(0.75f, 0.75f, 0.75f));
 
 			Render::Renderer::GetInstance()->AddModel(newModel);
-			std::cout << "Cow Model Loaded" << std::endl;
+			Log::PrintMessage("Cow Model Loaded");
 		}
 		break;
 
@@ -325,7 +325,7 @@ void Application::KeyPressed(GLint key, GLint action) {
 			newModel->GetTransform()->SetPosition(glm::vec3(posOffset, 0.0f, 0.0f));
 
 			Render::Renderer::GetInstance()->AddModel(newModel);
-			std::cout << "Dice Model Loaded" << std::endl;
+			Log::PrintMessage("Dice Model Loaded");
 		}
 		break;
 
@@ -334,7 +334,7 @@ void Application::KeyPressed(GLint key, GLint action) {
 			posOffset = -2.5f;
 			Render::Renderer::GetInstance()->RemoveAllModels();
 
-			std::cout << "Models Removed" << std::endl;
+			Log::PrintMessage("Models Removed");
 		}
 		break;
 
@@ -343,7 +343,7 @@ void Application::KeyPressed(GLint key, GLint action) {
 			posOffset -= 2.5f;
 			Render::Renderer::GetInstance()->RemoveFirstModel();
 
-			std::cout << "First Model Removed" << std::endl;
+			Log::PrintMessage("First Model Removed");
 		}
 		break;
 
@@ -351,7 +351,7 @@ void Application::KeyPressed(GLint key, GLint action) {
 		{
 			Render::Renderer::GetInstance()->RemoveLastModel();
 
-			std::cout << "Last Model Removed" << std::endl;
+			Log::PrintMessage("Last Model Removed");
 		}
 		break;
 
@@ -387,7 +387,7 @@ void Application::KeyPressed(GLint key, GLint action) {
 	window_refresh_callback(window.GetWindowPointer());
 }
 
-void Application::MousePressed(GLint button, GLint action) 
+void Application::MousePressed(GLint button, GLint action)
 {
 	//MOUSE BUTTON EVENTS
 }

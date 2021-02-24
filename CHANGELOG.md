@@ -14,7 +14,15 @@ Here you can see the different added features and fixed bugs in each version.
 
 - Core:
   - Window Abstraction class, which encapsulates GLFW methods. Not fully disengaged  yet, because of events.
+  
   - Now Time class is static, so you can access Time data from everywhere in the application.
+  
+    
+  
+- Debugger:
+
+  - Added a static Log class, which allow us to send info to the console from everywhere, with a timestamp.
+  - Added a static Debug class, which allow us to use assertions with associated messages sent to the console.  
 
 
 
@@ -27,6 +35,8 @@ Here you can see the different added features and fixed bugs in each version.
 #### Other improvements
 
 - Application life cycle is now separated from Window life cycle.
+
+- <iostream> include is removed from every class (kind of, still remains a bug to fix).
 
   
 

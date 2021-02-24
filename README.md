@@ -1,4 +1,4 @@
-### Polaris Engine ![Version](https://img.shields.io/badge/version-v0.1.1-green) ![License](https://img.shields.io/badge/License-Apache2.0-yellow)
+### Polaris Engine ![Version](https://img.shields.io/badge/version-v0.1.2-green) ![License](https://img.shields.io/badge/License-Apache2.0-yellow)
 
 
 
@@ -21,7 +21,7 @@ The game engine contains several modules and submodules, as well as a visual edi
 
 ###### Submodules
 
-- **Logger/Profiler**: It contains debugging features: log-to-console/log-to-file messages, profiling, etc. ![Version](https://img.shields.io/badge/v0.1-green)
+- **Debugger**: It contains debugging features: log-to-console/log-to-file messages, assertions, profiling, etc. ![Version](https://img.shields.io/badge/v0.2-green)
 
 - **Input**: It contains input features, like input polling. ![Version](https://img.shields.io/badge/v0.1-green)
 
