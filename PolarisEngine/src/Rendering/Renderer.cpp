@@ -11,6 +11,8 @@
 
 #include "Renderer.h"
 
+#include <chrono>
+
 namespace Render {
 	Renderer* Renderer::instance = nullptr;
 
@@ -50,10 +52,14 @@ namespace Render {
 
 	void Renderer::Refresh()
 	{
+		auto start = std::chrono::high_resolution_clock::now();
+
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		try 
 		{
+			RenderData renderInfo;
+
 			for (int j = 0; j < lights.size(); j++) 
 			{
 				glBlendFunc(GL_SRC_ALPHA, j == 0 ? GL_ONE_MINUS_SRC_ALPHA : GL_ONE);
@@ -63,8 +69,6 @@ namespace Render {
 					if (modelsList[i] != nullptr) 
 					{
 						if (currentCamera != nullptr) {
-
-							RenderData renderInfo;
 							renderInfo.lightData = lights[j]->GetLightData();
 							renderInfo.mvMatrix = currentCamera->GetVisionMatrix() * modelsList[i]->GetTransform()->GetModelMatrix();
 							renderInfo.mvITMatrix = glm::transpose(glm::inverse(renderInfo.mvMatrix));
@@ -80,6 +84,16 @@ namespace Render {
 			const std::string message = " - in function Refresh()";
 			throw std::runtime_error(e.what() + message);
 		}
+
+		auto stop = std::chrono::high_resolution_clock::now();
+
+		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+
+		renderFunctionTimesCalled++;
+		renderFunctionTime += duration.count();
+		renderFunctionAvrg = (renderFunctionTime / renderFunctionTimesCalled);
+
+		//std::cout << "Render Function Time: " << renderFunctionAvrg << std::endl;
 	}
 
 	void Renderer::SetWindowViewport(int width, int height)

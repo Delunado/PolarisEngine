@@ -32,6 +32,10 @@ namespace Render {
 
 		//Clear the color with the actual color
 		void ApplyColor();
+
+		long renderFunctionTime = 0;
+		long renderFunctionTimesCalled = 0;
+		long renderFunctionAvrg = 0;
 	public:
 		virtual ~Renderer();
 

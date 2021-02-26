@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
 		app.PrintAppInfo();
 
 		Log::PrintMessage("Starting Polaris Engine");
-		int appInit = app.Init();
+		int appInit = app.Init(600, 1024);
 
 		if (appInit != 0) return appInit;
 

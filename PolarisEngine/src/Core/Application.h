@@ -71,7 +71,7 @@ private:
 		app->ResizeWindow(width, height);
 	}
 
-	void ResizeWindow(GLint width, GLint height); 
+	void ResizeWindow(GLint width, GLint height);
 
 
 	//Este callback será llamado cada vez que se pulse una tecla dirigida al área de dibujo OpenGL

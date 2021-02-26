@@ -15,21 +15,27 @@ private:
 
 	GLfloat lastFrameTime;
 
-public:
-	static void Init();
-	void InitImplementation();
+	GLdouble lastTimeFPS;
+	GLint framesNumber;
 
-	static void Update();
+	void InitImplementation();
+	void FPSImplementation();
 	void UpdateImplementation();
 
-	static GLfloat GetDeltaTime();
 	GLfloat GetDeltaTimeImplementation();
+	GLfloat GetTimeSinceStartImplementation();
+public:
+	static void Init();
+
+	static void Update();
+
+	static void FPS();
+
+	static GLfloat GetDeltaTime();
 
 	/// <summary>
 	/// Returns the elapsed time since the application started.
 	/// </summary>
 	/// <returns>Time in seconds</returns>
 	static GLfloat GetTimeSinceStart();
-	static GLfloat GetTimeSinceStartImplementation();
-
 };

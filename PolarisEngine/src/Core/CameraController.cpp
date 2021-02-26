@@ -26,8 +26,10 @@ void CameraController::Update(float deltaTime)
 	lastMousePos = mousePos;
 	MouseMovement(deltaPos.x, -deltaPos.y);
 
-	float finalCameraSpeed = speed * deltaTime;
-	KeyboardMovement(finalCameraSpeed);
+	if (Input::GetKeyPressed(KEYCODE_LEFT_ALT)) {
+		float finalCameraSpeed = speed * deltaTime;
+		KeyboardMovement(finalCameraSpeed);
+	}
 }
 
 void CameraController::MouseMovement(double mouseOffsetX, double mouseOffsetY)

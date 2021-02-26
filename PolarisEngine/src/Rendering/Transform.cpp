@@ -1,9 +1,10 @@
 #include "Transform.h"
 
 namespace Render {
-	Transform::Transform() : position(glm::vec3(0, 0, 0)), rotation(glm::vec3(0, 0, 0)), scale(glm::vec3(1.0f))
-	{
 
+	Transform::Transform() : position(glm::vec3(0, 0, 0)), rotation(glm::vec3(0, 0, 0)), scale(glm::vec3(1.0f)), modelMatrix(glm::mat4(1.0f))
+	{
+		CalculateModelMatrix();
 	}
 
 	Transform::~Transform()
@@ -18,6 +19,8 @@ namespace Render {
 	void Transform::SetPosition(glm::vec3 position)
 	{
 		this->position = position;
+
+		CalculateModelMatrix();
 	}
 
 	glm::vec3 Transform::GetRotation()
@@ -28,6 +31,8 @@ namespace Render {
 	void Transform::SetRotation(glm::vec3 rotation)
 	{
 		this->rotation = rotation;
+
+		CalculateModelMatrix();
 	}
 
 	glm::vec3 Transform::GetScale()
@@ -38,9 +43,11 @@ namespace Render {
 	void Transform::SetScale(glm::vec3 scale)
 	{
 		this->scale = scale;
+
+		CalculateModelMatrix();
 	}
 
-	glm::mat4 Transform::GetModelMatrix()
+	void Transform::CalculateModelMatrix()
 	{
 		glm::mat4 translation = glm::translate(glm::mat4(1.0f), position);
 
@@ -50,6 +57,11 @@ namespace Render {
 
 		glm::mat4 scaled = glm::scale(rotationX, scale);
 
-		return scaled;
+		modelMatrix = scaled;
+	}
+
+	glm::mat4 Transform::GetModelMatrix()
+	{
+		return modelMatrix;
 	}
 }

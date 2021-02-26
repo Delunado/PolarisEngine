@@ -71,20 +71,21 @@ int Application::Init(GLint windowHeight, GLint windowWidth)
 	spotMaterial->SetColorTexture(spotTexture);
 
 	dragonMaterial = Render::Material::CreateMaterial(Render::Color::GREEN, Render::Color(0.5f, 0.5f, 0.5f), Render::Color(1.0f, 1.0f, 1.0f), 8.0f);
-	dragonTexture = Render::Texture::CreateTexture("Assets/DragonColor.png");
+	dragonTexture = Render::Texture::CreateTexture("Assets/Porro.png");
+
 	Render::Texture* diceNormalTexture = Render::Texture::CreateTexture("Assets/DragonNormal.png");
 	dragonMaterial->SetShaderProgram(basicShaderProgram);
-
 	dragonMaterial->SetShaderProgramNormalMap(normalShaderProgram);
+
 	dragonMaterial->SetColorTexture(dragonTexture);
 
 	dragonMaterial->SetNormalTexture(diceNormalTexture);
-	dragonMaterial->SetNormalMapActive(true);
+	dragonMaterial->SetNormalMapActive(false);
 
 	//Here we create a model and assign it to the renderer.
-	currentModel = Render::Model::CreateModel("Assets/Dragon.fbx", dragonMaterial);
-	currentModel->GetTransform()->SetRotation(glm::vec3(-90.0f, 180.0f, 0.0f));
-	currentModel->GetTransform()->SetScale(glm::vec3(0.25f, 0.25f, 0.25f));
+	currentModel = Render::Model::CreateModel("Assets/Porro.obj", dragonMaterial);
+	//currentModel->GetTransform()->SetRotation(glm::vec3(-90.0f, 180.0f, 0.0f));
+	//currentModel->GetTransform()->SetScale(glm::vec3(0.25f, 0.25f, 0.25f));
 
 	Render::Renderer::GetInstance()->AddModel(currentModel);
 
@@ -97,9 +98,9 @@ int Application::Init(GLint windowHeight, GLint windowWidth)
 
 	//Here we create the lights and add it to the renderer
 	ambientLight = new Render::AmbientLight(Render::Color(0.12f, 0.12f, 0.12f));
-	directionalLight = new Render::DirectionalLight(glm::vec3(0.0f, 1.0f, 0.0f), Render::Color::RED, Render::Color::GREEN);
-	pointLight = new Render::PointLight(glm::vec3(0.0f, 1.0f, 0.0f), Render::Color::RED, Render::Color::GREEN);
-	spotLight = new Render::SpotLight(glm::vec3(1.0f, 0.0f, 1.0f), glm::vec3(0.0f, 1.0f, 1.0f), 0.45f, Render::Color::RED, Render::Color::GREEN);
+	directionalLight = new Render::DirectionalLight(glm::vec3(0.0f, 1.0f, 0.0f), Render::Color(0.8f, 0.8f, 0.8f), Render::Color(0.8f, 0.8f, 0.8f));
+	pointLight = new Render::PointLight(glm::vec3(0.0f, 1.0f, 0.0f), Render::Color(0.8f, 0.8f, 0.8f), Render::Color(0.8f, 0.8f, 0.8f));
+	spotLight = new Render::SpotLight(glm::vec3(1.0f, 0.0f, 1.0f), glm::vec3(0.0f, 1.0f, 1.0f), 0.45f, Render::Color(0.8f, 0.8f, 0.8f), Render::Color(0.8f, 0.8f, 0.8f));
 
 	Render::Renderer::GetInstance()->AddLight(ambientLight);
 	Render::Renderer::GetInstance()->AddLight(directionalLight);
@@ -124,20 +125,22 @@ void Application::Run()
 
 		//Mandatory code in loop
 		Time::Update();
+		Time::FPS();
+
 		//-----------------------
 
 		/*ROTATION DRAGON*/
-		//currentModel->GetTransform()->SetRotation(
-		//	glm::vec3(
-		//		currentModel->GetTransform()->GetRotation().x,
-		//		currentModel->GetTransform()->GetRotation().y + 5.0f * time.GetDeltaTime(),
-		//		currentModel->GetTransform()->GetRotation().z
-		//	)
-		//);
+		currentModel->GetTransform()->SetRotation(
+			glm::vec3(
+				currentModel->GetTransform()->GetRotation().x,
+				currentModel->GetTransform()->GetRotation().y + 5.0f * Time::GetDeltaTime(),
+				currentModel->GetTransform()->GetRotation().z
+			)
+		);
 		/*END ROTATION DRAGON*/
 
 		/*DRAGON MOVEMENT*/
-		/*float movHor = 0.0f;
+		float movHor = 0.0f;
 		float movFront = 0.0f;
 		float movUp = 0.0f;
 
@@ -150,11 +153,11 @@ void Application::Run()
 
 		currentModel->GetTransform()->SetPosition(
 			glm::vec3(
-				currentModel->GetTransform()->GetPosition().x + movHor * time.GetDeltaTime(),
-				currentModel->GetTransform()->GetPosition().y + movUp * time.GetDeltaTime(),
-				currentModel->GetTransform()->GetPosition().z + movFront * time.GetDeltaTime()
+				currentModel->GetTransform()->GetPosition().x + movHor * Time::GetDeltaTime(),
+				currentModel->GetTransform()->GetPosition().y + movFront * Time::GetDeltaTime(),
+				currentModel->GetTransform()->GetPosition().z + movUp * Time::GetDeltaTime()
 			)
-		);*/
+		);
 		/*END DRAGON MOVEMENT*/
 
 		//currentCamera->SetLookAtPoint(currentModel->GetTransform()->GetPosition());
@@ -267,7 +270,9 @@ void Application::ResizeWindow(GLint width, GLint height) {
 }
 
 void Application::KeyPressed(GLint key, GLint action) {
+	
 	if (action == GLFW_PRESS) {
+		
 		switch (key) {
 		case GLFW_KEY_C: //Clamp the cursor in the screen.
 			Input::SetCursorLocked(false);
@@ -384,7 +389,7 @@ void Application::KeyPressed(GLint key, GLint action) {
 		}
 	}
 
-	window_refresh_callback(window.GetWindowPointer());
+	//window_refresh_callback(window.GetWindowPointer());
 }
 
 void Application::MousePressed(GLint button, GLint action)

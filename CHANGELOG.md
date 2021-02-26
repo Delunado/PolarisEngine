@@ -17,6 +17,8 @@ Here you can see the different added features and fixed bugs in each version.
   
   - Now Time class is static, so you can access Time data from everywhere in the application.
   
+  - Added FPS Counter (well, actually it's a "ms to render a frame" counter). Output to console.
+  
     
   
 - Debugger:
