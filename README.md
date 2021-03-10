@@ -50,7 +50,7 @@ Right now, Polaris Engine is only compilable and usable on Windows. This reposit
 2. Double click on `InstallDependencies.bat`. This script will locate the dependencies and properly unzip the `Dependencies.zip` for you.
 3. Open the Visual Studio Solution and try to compile and execute Polaris Engine. It should work now. If it's not working, please make an issue in this repo and I will try to help you!
 
-**Important:** Right now, Polaris Engine is only compilable in x64 mode. This will be fixed soon. Sorry.
+**Important:** Right now, Polaris Engine is only compilable using VS2019 in x64 mode. This will be fixed soon. Sorry.
 
 <br>
 
