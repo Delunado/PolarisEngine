@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "lodepng.h"
+#include <png.hpp>
 #include "Texture.h"
 
 namespace Render {
@@ -59,11 +60,12 @@ namespace Render {
 		glGenTextures(1, &id);
 		glBindTexture(GL_TEXTURE_2D, id);
 
-		//Load image
+		//Load imag
 		GLuint error = lodepng::decode(image, width, height, texturePath);
+		//png::image<png::rgb_pixel> image(texturePath);
 
 		if (error) {
-			throw std::runtime_error("Can't load texture");
+			throw std::runtime_error("Can't load texture: " + texturePath);
 		}
 
 		//Reverse texture image

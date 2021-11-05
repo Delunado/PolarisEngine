@@ -71,7 +71,7 @@ int Application::Init(GLint windowHeight, GLint windowWidth)
 	spotMaterial->SetColorTexture(spotTexture);
 
 	dragonMaterial = Render::Material::CreateMaterial(Render::Color::GREEN, Render::Color(0.5f, 0.5f, 0.5f), Render::Color(1.0f, 1.0f, 1.0f), 8.0f);
-	dragonTexture = Render::Texture::CreateTexture("Assets/Porro.png");
+	dragonTexture = Render::Texture::CreateTexture("Assets/Borro.png");
 
 	Render::Texture* diceNormalTexture = Render::Texture::CreateTexture("Assets/DragonNormal.png");
 	dragonMaterial->SetShaderProgram(basicShaderProgram);
@@ -83,7 +83,7 @@ int Application::Init(GLint windowHeight, GLint windowWidth)
 	dragonMaterial->SetNormalMapActive(false);
 
 	//Here we create a model and assign it to the renderer.
-	currentModel = Render::Model::CreateModel("Assets/Porro.obj", dragonMaterial);
+	currentModel = Render::Model::CreateModel("Assets/Borro.obj", dragonMaterial);
 	//currentModel->GetTransform()->SetRotation(glm::vec3(-90.0f, 180.0f, 0.0f));
 	//currentModel->GetTransform()->SetScale(glm::vec3(0.25f, 0.25f, 0.25f));
 
@@ -106,6 +106,15 @@ int Application::Init(GLint windowHeight, GLint windowWidth)
 	Render::Renderer::GetInstance()->AddLight(directionalLight);
 	Render::Renderer::GetInstance()->AddLight(pointLight);
 	Render::Renderer::GetInstance()->AddLight(spotLight);
+
+	//Here we create the skybox. Make it a class!
+	//Render::Texture* skyboxTexture = Render::Texture::CreateTexture("Assets/SkyBoxTexture.png");
+
+	//Render::Material* skyboxMaterial = Render::Material::CreateMaterial(Render::Color(0.5f, 0.5f, 0.5f), Render::Color(0.1f, 0.3f, 0.7f), Render::Color(1.0f, 1.0f, 1.0f), 8.0f);
+	//skyboxMaterial->SetColorTexture(skyboxTexture);
+
+	//skyboxModel = Render::Model::CreateModel("Assets/SkyBoxModel.obj", skyboxMaterial);
+	//Render::Renderer::GetInstance()->AddModel(skyboxModel);
 
 	//---- INIT MODULES ----
 	Time::Init();

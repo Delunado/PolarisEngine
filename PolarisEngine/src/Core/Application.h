@@ -41,6 +41,7 @@ private:
 	Render::Shader* fragmentShader;
 
 	Render::Model* currentModel;
+	Render::Model* skyboxModel;
 	Render::Material* basicMaterial;
 	Render::Material* dragonMaterial;
 	Render::Material* spotMaterial;

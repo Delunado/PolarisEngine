@@ -134,7 +134,7 @@ namespace Render {
 			ProcessNode(scene->mRootNode, scene);
 		}
 		else {
-			throw std::runtime_error("Error Loading Model - Can't Load Model: \n");
+			throw std::runtime_error("Error Loading Model - Can't Load Model: " + modelPath + "\n");
 		}
 	}
 

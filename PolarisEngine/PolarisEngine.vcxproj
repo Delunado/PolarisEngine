@@ -224,7 +224,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Maths;$(SolutionDir)PolarisEngine\src\Rendering;$(SolutionDir)Dependencies\DWin64\assimp\include;$(SolutionDir)Dependencies\DWin64\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\DWin64\glfw-3.3.2.bin.WIN64\include;$(SolutionDir)Dependencies\DWin64\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)PolarisEngine\src\Core;$(SolutionDir)PolarisEngine\src\Maths;$(SolutionDir)PolarisEngine\src\Rendering;$(SolutionDir)Dependencies\DWin64\assimp\include;$(SolutionDir)Dependencies\DWin64\glm-0.9.9.0\glm;$(SolutionDir)Dependencies\DWin64\glfw-3.3.2.bin.WIN64\include;$(SolutionDir)Dependencies\DWin64\glew-2.1.0\include;$(SolutionDir)Dependencies\DWin64\png++-0.2.9\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
