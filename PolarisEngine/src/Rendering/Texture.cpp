@@ -2,7 +2,6 @@
 #include <iostream>
 
 #include "lodepng.h"
-#include <png.hpp>
 #include "Texture.h"
 
 namespace Render {

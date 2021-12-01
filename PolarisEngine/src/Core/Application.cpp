@@ -83,7 +83,7 @@ int Application::Init(GLint windowHeight, GLint windowWidth)
 	dragonMaterial->SetNormalMapActive(false);
 
 	//Here we create a model and assign it to the renderer.
-	currentModel = Render::Model::CreateModel("Assets/Borro.obj", dragonMaterial);
+	currentModel = Render::Model::CreateModel("Assets/Dragon.fbx", dragonMaterial);
 	//currentModel->GetTransform()->SetRotation(glm::vec3(-90.0f, 180.0f, 0.0f));
 	//currentModel->GetTransform()->SetScale(glm::vec3(0.25f, 0.25f, 0.25f));
 
